@@ -13,6 +13,9 @@
 		218849BF20B17B470021BA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218849BE20B17B470021BA95 /* Assets.xcassets */; };
 		218849C220B17B470021BA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218849C020B17B470021BA95 /* LaunchScreen.storyboard */; };
 		218849C520B17B470021BA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849C420B17B470021BA95 /* main.m */; };
+		218849DA20B17E660021BA95 /* CHBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849D120B17E660021BA95 /* CHBalanceViewController.m */; };
+		218849DB20B17E660021BA95 /* CHEquationInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849D320B17E660021BA95 /* CHEquationInputView.m */; };
+		218849DC20B17E660021BA95 /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849D820B17E660021BA95 /* CHBaseViewController.m */; };
 		97F8E8062C0B82BFE695F8E2 /* libPods-balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,13 @@
 		218849C120B17B470021BA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218849C320B17B470021BA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218849C420B17B470021BA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		218849D020B17E660021BA95 /* CHEquationInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEquationInputView.h; sourceTree = "<group>"; };
+		218849D120B17E660021BA95 /* CHBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBalanceViewController.m; sourceTree = "<group>"; };
+		218849D220B17E660021BA95 /* CHBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBalanceViewController.h; sourceTree = "<group>"; };
+		218849D320B17E660021BA95 /* CHEquationInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEquationInputView.m; sourceTree = "<group>"; };
+		218849D820B17E660021BA95 /* CHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewController.m; sourceTree = "<group>"; };
+		218849D920B17E660021BA95 /* CHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseViewController.h; sourceTree = "<group>"; };
+		218849E120B17FE90021BA95 /* balance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "balance-Prefix.pch"; sourceTree = "<group>"; };
 		802C5E3FF81DB0651A59162F /* Pods-balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.release.xcconfig"; sourceTree = "<group>"; };
 		A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-balance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEC3954E15E9918D03C459A /* Pods-balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,10 +84,12 @@
 		218849B420B17B450021BA95 /* balance */ = {
 			isa = PBXGroup;
 			children = (
+				218849CB20B17E660021BA95 /* chemistry */,
 				218849B520B17B450021BA95 /* AppDelegate.h */,
 				218849B620B17B450021BA95 /* AppDelegate.m */,
 				218849B820B17B450021BA95 /* ViewController.h */,
 				218849B920B17B450021BA95 /* ViewController.m */,
+				218849E120B17FE90021BA95 /* balance-Prefix.pch */,
 				218849BB20B17B450021BA95 /* Main.storyboard */,
 				218849BE20B17B470021BA95 /* Assets.xcassets */,
 				218849C020B17B470021BA95 /* LaunchScreen.storyboard */,
@@ -85,6 +97,83 @@
 				218849C420B17B470021BA95 /* main.m */,
 			);
 			path = balance;
+			sourceTree = "<group>";
+		};
+		218849CB20B17E660021BA95 /* chemistry */ = {
+			isa = PBXGroup;
+			children = (
+				218849CC20B17E660021BA95 /* Balance */,
+				218849D420B17E660021BA95 /* Base */,
+			);
+			path = chemistry;
+			sourceTree = "<group>";
+		};
+		218849CC20B17E660021BA95 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				218849CD20B17E660021BA95 /* ViewModel */,
+				218849CE20B17E660021BA95 /* Model */,
+				218849CF20B17E660021BA95 /* View */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		218849CD20B17E660021BA95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		218849CE20B17E660021BA95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		218849CF20B17E660021BA95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				218849D220B17E660021BA95 /* CHBalanceViewController.h */,
+				218849D120B17E660021BA95 /* CHBalanceViewController.m */,
+				218849D020B17E660021BA95 /* CHEquationInputView.h */,
+				218849D320B17E660021BA95 /* CHEquationInputView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		218849D420B17E660021BA95 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				218849D520B17E660021BA95 /* ViewModel */,
+				218849D620B17E660021BA95 /* Model */,
+				218849D720B17E660021BA95 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		218849D520B17E660021BA95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		218849D620B17E660021BA95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		218849D720B17E660021BA95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				218849D920B17E660021BA95 /* CHBaseViewController.h */,
+				218849D820B17E660021BA95 /* CHBaseViewController.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7AD76CE5513791CAF6736625 /* Frameworks */ = {
@@ -187,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218849DA20B17E660021BA95 /* CHBalanceViewController.m in Sources */,
 				218849BA20B17B450021BA95 /* ViewController.m in Sources */,
+				218849DC20B17E660021BA95 /* CHBaseViewController.m in Sources */,
 				218849C520B17B470021BA95 /* main.m in Sources */,
+				218849DB20B17E660021BA95 /* CHEquationInputView.m in Sources */,
 				218849B720B17B450021BA95 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N67R33E7P;
+				GCC_PREFIX_HEADER = "$SRCROOT/balance/balance-Prefix.pch";
 				INFOPLIST_FILE = balance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -351,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N67R33E7P;
+				GCC_PREFIX_HEADER = "$SRCROOT/balance/balance-Prefix.pch";
 				INFOPLIST_FILE = balance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
