@@ -11,5 +11,6 @@
 
 #import <ReactiveObjC.h>
 #import <Masonry.h>
+#import "UIColor+CHColors.h"
 
 #endif /* balance_Prefix_pch */

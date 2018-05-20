@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UIColor+CHColors.h
 //  balance
 //
 //  Created by ZhangTino on 2018/5/20.
@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface UIColor (CHColors)
++ (UIColor *)colorWithNumber:(NSInteger)colorNumber;
 @end
 
+/**
+ colorNumber:
+ 0:键盘灰
+ 1:
+ */
