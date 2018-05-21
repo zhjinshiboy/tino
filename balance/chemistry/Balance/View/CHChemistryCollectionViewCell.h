@@ -7,6 +7,8 @@
 //
 
 #import "CHBaseCollectionViewCell.h"
+#import "CHClickableElement.h"
 
 @interface CHChemistryCollectionViewCell : CHBaseCollectionViewCell
+- (void)setData:(CHClickableElement *)element;
 @end

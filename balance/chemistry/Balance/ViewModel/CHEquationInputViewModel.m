@@ -7,9 +7,7 @@
 //
 
 #import "CHEquationInputViewModel.h"
-#import "CHChemistryCollectionViewCell.h"
 #import "CHClickableElement.h"
-#import "CHChemistryCollectionViewCellItem.h"
 
 @implementation CHEquationInputViewModel
 
@@ -17,7 +15,6 @@
 {
     self = [super init];
     if (self) {
-        [self setDataArr:[self inputBtnObjs]];
     }
     return self;
 }
@@ -29,44 +26,83 @@
     return _clickSignal;
 }
 
-- (CGSize)getCellSizeAtIndexPath:(NSIndexPath *)indexPath {
-    CHChemistryCollectionViewCellItem *cellItem = self.dataArr[indexPath.row];
-    return [cellItem getContentSize];
+- (CGSize)getChemistrySizeAtIndexPath:(NSIndexPath *)indexPath {
+    CHClickableElement *ele = self.chemistryDataArr[indexPath.row];
+    return ele.size;
 }
 
-#pragma mark - uicollectionview datasource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dataArr.count;
+- (CGSize)getOperatorSizeAtIndexPath:(NSIndexPath *)indexPath {
+    CHClickableElement *ele = self.operatorDataArr[indexPath.row];
+    return ele.size;
 }
 
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CHChemistryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CHEquationCollectioCellIdentifier forIndexPath:indexPath];
-//    [cell setData:self.dataArr[indexPath.row]];
-    [cell setCellItem:self.dataArr[indexPath.row]];
-    return cell;
-}
-
-#pragma mark - install data
-- (NSArray *)inputBtnObjs {
-    CHClickableElement *ele1 = [CHClickableElement new];
-    ele1.title = CHString(@"1");
-    [ele1 setSize:CGSizeMake(620, 80)];
-    CHClickableElement *ele2 = [CHClickableElement new];
-    ele2.title = CHString(@"2");
-    [ele1 setSize:CGSizeMake(80, 100)];
-    CHClickableElement *ele3 = [CHClickableElement new];
-    ele3.title = CHString(@"3");
-    [ele3 setSize:CGSizeMake(620, 50)];
-    CHClickableElement *ele4 = [CHClickableElement new];
-    ele4.title = CHString(@"4");
-//    forin
-    NSArray *arr = @[ele1,ele2,ele3,ele4];
-    NSMutableArray *result = [NSMutableArray array];
-    for (CHClickableElement *ele in arr) {
-        CHChemistryCollectionViewCellItem *cellItem = [[CHChemistryCollectionViewCellItem alloc] initWithModel:ele];
-        [result addObject:cellItem];
+#pragma mark - lazy load
+- (NSArray *)chemistryDataArr {
+    if (!_chemistryDataArr) {
+        CGFloat height = (CHKeyboardHeight - 2.4) / 7.0f;
+        CGFloat width1 = (CHChemistryBoardWidth - 0.8) / 3.0f;
+        CGFloat width2 = CHChemistryBoardWidth - width1;
+        CGSize common = CGSizeMake(width1, height);
+        CGSize action = CGSizeMake(width2, height);
+        
+        _chemistryDataArr = @[
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Common") size:common type:CHClickableElementTypeAction colorNumber:1],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Periodic Table") size:action type:CHClickableElementTypeAction colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"H") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"C") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"N") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"O") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Na") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Mg") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Al") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Si") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"S") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Cl") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"K") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Ca") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Mn") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Fe") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Cu") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Zn") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Br") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              [[CHClickableElement alloc] initWithTitle:CHString(@"Ba") size:common type:CHClickableElementTypeChemistry colorNumber:2],
+                              ];
     }
-    return result;
+    return _chemistryDataArr;
+}
+
+- (NSArray *)operatorDataArr {
+    if (!_operatorDataArr) {
+        CGFloat height1 = CHKeyboardHeight * 52 / 370.0f;
+        CGFloat height2 = CHKeyboardHeight * 66 / 370.0f;
+        CGFloat width = (CHOperatorBoardWidth - 1.2) / 4.0f;
+        CGSize size1 = CGSizeMake(width, height1);
+        CGSize size2 = CGSizeMake(width, height2);
+        CGSize size3 = CGSizeMake(width, height2 * 2);
+        
+        _operatorDataArr = @[
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"Shift") size:size1 type:CHClickableElementTypeOperator colorNumber:3],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"1") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"4") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"7") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"0") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"→") size:size1 type:CHClickableElementTypeOperator colorNumber:3],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"2") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"5") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"8") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"(") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"C") size:size1 type:CHClickableElementTypeOperator colorNumber:3],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"3") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"6") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"9") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@")") size:size2 type:CHClickableElementTypeOperator colorNumber:4],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"Delete") size:size1 type:CHClickableElementTypeOperator colorNumber:3],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"+") size:size2 type:CHClickableElementTypeOperator colorNumber:3],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"-") size:size2 type:CHClickableElementTypeOperator colorNumber:3],
+                             [[CHClickableElement alloc] initWithTitle:CHString(@"Balance") size:size3 type:CHClickableElementTypeOperator colorNumber:5],
+                             ];
+    }
+    return _operatorDataArr;
 }
 
 

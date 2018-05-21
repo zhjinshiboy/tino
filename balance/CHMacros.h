@@ -10,5 +10,10 @@
 #define CHMacros_h
 
 #define CHString(x) NSLocalizedStringFromTable(x, @"CHLocalizable", nil)
+#define CHScreenHeight [UIScreen mainScreen].bounds.size.height
+#define CHScreenWidth [UIScreen mainScreen].bounds.size.width
+#define CHKeyboardHeight (CHScreenHeight * 370 / 523.0f)
+#define CHChemistryBoardWidth (CHScreenWidth * 363 / 866.0f)
+#define CHOperatorBoardWidth (CHScreenWidth * 503 / 866.0f)
 
 #endif /* CHMacros_h */

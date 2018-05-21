@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger , CHClickableElementType) {
+    CHClickableElementTypeChemistry,
+    CHClickableElementTypeOperator,
+    CHClickableElementTypeAction,
+};
+
 @interface CHClickableElement : NSObject
 @property (nonatomic , strong) NSString *title;
 @property (nonatomic , assign) CGSize size;
+@property (nonatomic , assign) CHClickableElementType type;
+@property (nonatomic , assign) NSInteger colorNumber;
+- (instancetype)initWithTitle:(NSString *)title size:(CGSize)size type:(CHClickableElementType)type colorNumber:(NSInteger)colorNumber;
 @end

@@ -8,12 +8,13 @@
 
 #import "CHEquationInputView.h"
 #import "CHEquationInputViewModel.h"
-#import "CHCollectionViewFlowLayout.h"
 #import "CHChemistryCollectionViewCell.h"
 
-@interface CHEquationInputView()<UICollectionViewDelegate>
+@interface CHEquationInputView()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic , strong) CHEquationInputViewModel *viewModel;
-@property (nonatomic , strong) UICollectionView *collectionView;
+@property (nonatomic , strong) UICollectionView *chemistryCollection;
+@property (nonatomic , strong) UICollectionView *operatorCollection;
+@property (nonatomic , strong) UILabel *operatorTitle;
 @end
 
 @implementation CHEquationInputView
@@ -28,27 +29,70 @@
 }
 
 - (void)configSubviews {
-    [self addSubview:self.collectionView];
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+    [self addSubview:self.chemistryCollection];
+    [self.chemistryCollection mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.equalTo(self);
+        make.width.equalTo(self.mas_width).multipliedBy(363/866.0f);
+    }];
+    [self addSubview:self.operatorCollection];
+    [self.operatorCollection mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.equalTo(self);
+        make.left.equalTo(self.chemistryCollection.mas_right);
+        make.height.equalTo(@(CHKeyboardHeight * (370 - 52) / 370.0f));
+    }];
+    [self addSubview:self.operatorTitle];
+    [self.operatorTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.operatorCollection.mas_top);
+        make.left.equalTo(self.chemistryCollection.mas_right);
+        make.top.right.equalTo(self);
     }];
 }
 
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
+- (UICollectionView *)chemistryCollection {
+    if (!_chemistryCollection) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         [layout setMinimumInteritemSpacing:0];
         [layout setMinimumLineSpacing:0];
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self.viewModel;
-        _collectionView.showsHorizontalScrollIndicator = NO;
-        _collectionView.showsVerticalScrollIndicator = NO;
-        [_collectionView setScrollEnabled:NO];
-        [_collectionView registerClass:[CHChemistryCollectionViewCell class] forCellWithReuseIdentifier:CHEquationCollectioCellIdentifier];
-        [_collectionView setBackgroundColor:[UIColor yellowColor]];
+        _chemistryCollection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _chemistryCollection.delegate = self;
+        _chemistryCollection.dataSource = self;
+        _chemistryCollection.showsHorizontalScrollIndicator = NO;
+        _chemistryCollection.showsVerticalScrollIndicator = NO;
+        [_chemistryCollection setScrollEnabled:NO];
+        [_chemistryCollection registerClass:[CHChemistryCollectionViewCell class] forCellWithReuseIdentifier:CHEquationCollectioCellIdentifier];
+        [_chemistryCollection setBackgroundColor:[UIColor clearColor]];
     }
-    return _collectionView;
+    return _chemistryCollection;
+}
+
+- (UICollectionView *)operatorCollection {
+    if (!_operatorCollection) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        [layout setMinimumInteritemSpacing:0];
+        [layout setMinimumLineSpacing:0];
+        _operatorCollection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _operatorCollection.delegate = self;
+        _operatorCollection.dataSource = self;
+        _operatorCollection.showsHorizontalScrollIndicator = NO;
+        _operatorCollection.showsVerticalScrollIndicator = NO;
+        [_operatorCollection setScrollEnabled:NO];
+        [_operatorCollection registerClass:[CHChemistryCollectionViewCell class] forCellWithReuseIdentifier:CHEquationCollectioCellIdentifier];
+        [_operatorCollection setBackgroundColor:[UIColor clearColor]];
+    }
+    return _operatorCollection;
+}
+
+- (UILabel *)operatorTitle {
+    if (!_operatorTitle) {
+        _operatorTitle = [UILabel new];
+        [_operatorTitle setBackgroundColor:[UIColor colorWithNumber:1]];
+        [_operatorTitle setFont:[UIFont systemFontOfSize:15]];
+        [_operatorTitle setTextColor:[UIColor colorWithNumber:0]];
+        [_operatorTitle setText:CHString(@"Chemical Equation / Lonic Equation")];
+        [_operatorTitle setTextAlignment:NSTextAlignmentCenter];
+    }
+    return _operatorTitle;
 }
 
 #pragma mark - collectionView delegate
@@ -56,22 +100,36 @@
     return 1;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-}
-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.viewModel getCellSizeAtIndexPath:indexPath];
+    if (collectionView == self.chemistryCollection) {
+        return [self.viewModel getChemistrySizeAtIndexPath:indexPath];
+    }
+    if (collectionView == self.operatorCollection) {
+        return [self.viewModel getOperatorSizeAtIndexPath:indexPath];
+    }
+    return CGSizeZero;
 }
 
-//-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-//{
-//    return 8;
-//}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (collectionView == self.chemistryCollection) {
+        return self.viewModel.chemistryDataArr.count;
+    }
+    if (collectionView == self.operatorCollection) {
+        return self.viewModel.operatorDataArr.count;
+    }
+    return 0;
+}
 
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
-//{
-//    return UIEdgeInsetsMake(0,0,11,0);
-//}
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CHChemistryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CHEquationCollectioCellIdentifier forIndexPath:indexPath];
+    if (collectionView == self.chemistryCollection) {
+        [cell setData:self.viewModel.chemistryDataArr[indexPath.row]];
+    }
+    if (collectionView == self.operatorCollection) {
+        [cell setData:self.viewModel.operatorDataArr[indexPath.row]];
+    }
+    return cell;
+}
 
 @end

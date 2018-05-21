@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CHBaseViewModel;
+//@class CHBaseViewModel;
 
 @interface CHBaseCollectionViewCell : UICollectionViewCell
-@property (nonatomic , strong) CHBaseViewModel *cellItem;
+//@property (nonatomic , strong) CHBaseViewModel *cellItem;
 @end

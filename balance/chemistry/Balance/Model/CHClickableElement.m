@@ -10,11 +10,14 @@
 
 @implementation CHClickableElement
 
-- (instancetype)init
+- (instancetype)initWithTitle:(NSString *)title size:(CGSize)size type:(CHClickableElementType)type colorNumber:(NSInteger)colorNumber
 {
     self = [super init];
     if (self) {
-        self.size = CGSizeMake(80, 50);
+        self.size = size;
+        self.title = title;
+        self.type = type;
+        self.colorNumber = colorNumber;
     }
     return self;
 }

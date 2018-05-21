@@ -36,13 +36,13 @@
     [self.view addSubview:self.equInputView];
     
     [self.consoleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(self.view.mas_height).multipliedBy(1/3.5f);
         make.left.right.top.equalTo(self.view);
     }];
     [self.equInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.consoleLabel.mas_bottom);
-        make.left.bottom.equalTo(self.view);
-        make.right.equalTo(self.view.mas_right).offset(-30);
+        make.height.equalTo(@(CHKeyboardHeight));
+        make.left.right.bottom.equalTo(self.view);
+//        make.right.equalTo(self.view.mas_right).offset(-30);
     }];
 }
 
@@ -50,7 +50,7 @@
 - (UILabel *)consoleLabel {
     if (!_consoleLabel) {
         _consoleLabel = [UILabel new];
-        [_consoleLabel setBackgroundColor:[UIColor colorWithNumber:0]];
+        [_consoleLabel setBackgroundColor:[UIColor colorWithNumber:4]];
     }
     return _consoleLabel;
 }

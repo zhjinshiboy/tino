@@ -7,39 +7,48 @@
 //
 
 #import "CHChemistryCollectionViewCell.h"
-#import "CHChemistryCollectionViewCellItem.h"
+#import "UIImage+CHColors.h"
 
 @interface CHChemistryCollectionViewCell()
-@property (nonatomic , strong) CHChemistryCollectionViewCellItem *cellItem;
-@property (nonatomic , strong) UILabel *chemistryLabel;
+@property (nonatomic , strong) UIButton *btn;
 @end
 
 @implementation CHChemistryCollectionViewCell
-@synthesize cellItem = _cellItem;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self.contentView setBackgroundColor:[UIColor blueColor]];
-        [self.contentView addSubview:self.chemistryLabel];
-        [self.chemistryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self.contentView);
+        [self.contentView.layer setBorderWidth:1];
+        [self.contentView.layer setBorderColor:[UIColor colorWithNumber:8].CGColor];
+        [self.contentView addSubview:self.btn];
+        [self.btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
         }];
     }
     return self;
 }
 
-- (UILabel *)chemistryLabel {
-    if (!_chemistryLabel) {
-        _chemistryLabel = [UILabel new];
+- (UIButton *)btn {
+    if (!_btn) {
+        _btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithNumber:9]] forState:UIControlStateHighlighted];
+        [_btn setTitleColor:[UIColor colorWithNumber:0] forState:UIControlStateNormal];
+        [_btn setTitleColor:[UIColor colorWithNumber:6] forState:UIControlStateDisabled];
+        [_btn.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        @weakify(self);
+        [[_btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            [self.btn setEnabled:NO];
+        }];
     }
-    return _chemistryLabel;
+    return _btn;
 }
 
-- (void)setCellItem:(CHChemistryCollectionViewCellItem *)cellItem {
-    _cellItem = cellItem;
-    [self.chemistryLabel setText:[self.cellItem getDisplayString]];
+- (void)setData:(CHClickableElement *)element {
+    [self.btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithNumber:element.colorNumber]] forState:UIControlStateNormal];
+    [self.btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithNumber:element.colorNumber]] forState:UIControlStateDisabled];
+    [self.btn setTitle:element.title forState:UIControlStateNormal];
 }
 
 @end

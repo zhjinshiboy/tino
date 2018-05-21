@@ -7,13 +7,13 @@
 //
 
 #import "CHBaseViewModel.h"
-#import "CHCollectionViewFlowLayout.h"
 
 #define CHEquationCollectioCellIdentifier @"CHEquationCollectioCellIdentifier"
 
-@interface CHEquationInputViewModel : CHBaseViewModel<UICollectionViewDataSource,CHCollectionViewDelegate>
-@property (nonatomic , strong) NSArray *dataArr;
+@interface CHEquationInputViewModel : CHBaseViewModel
+@property (nonatomic , strong) NSArray *chemistryDataArr;
+@property (nonatomic , strong) NSArray *operatorDataArr;
 @property (nonatomic , strong) RACSubject *clickSignal;
-//@property (nonatomic , strong)
-- (CGSize)getCellSizeAtIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)getOperatorSizeAtIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)getChemistrySizeAtIndexPath:(NSIndexPath *)indexPath;
 @end
