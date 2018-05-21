@@ -14,6 +14,15 @@
 
 @implementation CHBaseViewController
 
+- (instancetype)initWithViewModel:(CHBaseViewModel *)viewModel
+{
+    self = [self init];
+    if (self) {
+        self.viewModel = viewModel;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];

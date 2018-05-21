@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CHBalanceViewController.h"
+#import "CHBalanceViewModel.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window.rootViewController = [CHBalanceViewController new];
+    self.window.rootViewController = [[CHBalanceViewController alloc] initWithViewModel:[CHBalanceViewModel new]];
     [self.window makeKeyAndVisible];
     return YES;
 }

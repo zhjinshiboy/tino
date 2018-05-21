@@ -7,14 +7,26 @@
 //
 
 #import "CHBalanceViewController.h"
+#import "CHBalanceViewModel.h"
 #import "CHEquationInputView.h"
 
 @interface CHBalanceViewController ()
+@property (nonatomic , strong) CHBalanceViewModel *viewModel;
 @property (nonatomic , strong) UILabel *consoleLabel;     //方程式控制台
 @property (nonatomic , strong) CHEquationInputView *equInputView;       //方程式键盘
 @end
 
 @implementation CHBalanceViewController
+@dynamic viewModel;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +41,8 @@
     }];
     [self.equInputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.consoleLabel.mas_bottom);
-        make.left.right.bottom.equalTo(self.view);
+        make.left.bottom.equalTo(self.view);
+        make.right.equalTo(self.view.mas_right).offset(-30);
     }];
 }
 
@@ -44,7 +57,7 @@
 
 - (CHEquationInputView *)equInputView {
     if (!_equInputView) {
-        _equInputView = [CHEquationInputView new];
+        _equInputView = [[CHEquationInputView alloc] initWithViewModel:self.viewModel.inputViewModel];
     }
     return _equInputView;
 }

@@ -1,15 +1,15 @@
 //
-//  CHBaseViewController.h
-//  kfptb
+//  CHBaseView.h
+//  balance
 //
-//  Created by ZhangTino on 2018/5/16.
+//  Created by ZhangTino on 2018/5/21.
 //  Copyright © 2018年 ZhangTino. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "CHBaseViewModel.h"
+@class CHBaseViewModel;
 
-@interface CHBaseViewController : UIViewController
+@interface CHBaseView : UIView
 @property (nonatomic , strong) CHBaseViewModel *viewModel;
 - (instancetype)initWithViewModel:(CHBaseViewModel *)viewModel;
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ZhangTino. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHBaseView.h"
 
-@interface CHEquationInputView : UIView
+@interface CHEquationInputView : CHBaseView
 
 @end
