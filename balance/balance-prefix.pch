@@ -8,10 +8,14 @@
 
 #ifndef balance_Prefix_pch
 #define balance_Prefix_pch
+#ifdef __OBJC__
 
 #import <ReactiveObjC.h>
 #import <Masonry.h>
 #import "CHMacros.h"
 #import "UIColor+CHColors.h"
+#import "UIFont+CHFonts.h"
+#import "CHEquationManager.h"
 
+#endif
 #endif /* balance_Prefix_pch */

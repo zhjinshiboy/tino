@@ -87,7 +87,7 @@
     if (!_operatorTitle) {
         _operatorTitle = [UILabel new];
         [_operatorTitle setBackgroundColor:[UIColor colorWithNumber:1]];
-        [_operatorTitle setFont:[UIFont systemFontOfSize:15]];
+        [_operatorTitle setFont:[UIFont fontWithNumber:0]];
         [_operatorTitle setTextColor:[UIColor colorWithNumber:0]];
         [_operatorTitle setText:CHString(@"Chemical Equation / Lonic Equation")];
         [_operatorTitle setTextAlignment:NSTextAlignmentCenter];

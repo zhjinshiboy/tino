@@ -3,4 +3,5 @@ target "balance" do
 pod 'ReactiveObjC', '~> 3.0.0'
 pod 'Masonry', '~> 1.1.0'
 #pod 'YYModel', '~> 1.0.4'
+pod 'Toast', '~> 4.0.0'
 end

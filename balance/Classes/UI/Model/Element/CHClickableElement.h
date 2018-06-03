@@ -9,9 +9,19 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger , CHClickableElementType) {
+    CHClickableElementTypeCommon,
     CHClickableElementTypeChemistry,
-    CHClickableElementTypeOperator,
-    CHClickableElementTypeAction,
+    CHClickableElementTypePeriodicTable,
+    CHClickableElementTypeCount,
+    CHClickableElementTypeShiftSign,
+    CHClickableElementTypeEqualSign,
+    CHClickableElementTypeClealSign,
+    CHClickableElementTypeDeleteSign,
+    CHClickableElementTypeAddSign,
+    CHClickableElementTypeReduceSign,
+    CHClickableElementTypeBalanceSign,
+    CHClickableElementTypeLeftBracket,
+    CHClickableElementTypeRightBracket
 };
 
 @interface CHClickableElement : NSObject

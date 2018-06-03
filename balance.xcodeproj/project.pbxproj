@@ -12,19 +12,25 @@
 		218849BF20B17B470021BA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218849BE20B17B470021BA95 /* Assets.xcassets */; };
 		218849C220B17B470021BA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218849C020B17B470021BA95 /* LaunchScreen.storyboard */; };
 		218849C520B17B470021BA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849C420B17B470021BA95 /* main.m */; };
-		218849DA20B17E660021BA95 /* CHBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849D120B17E660021BA95 /* CHBalanceViewController.m */; };
-		218849DB20B17E660021BA95 /* CHEquationInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849D320B17E660021BA95 /* CHEquationInputView.m */; };
-		218849DC20B17E660021BA95 /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849D820B17E660021BA95 /* CHBaseViewController.m */; };
-		218849E920B189D50021BA95 /* UIColor+CHColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849E820B189D50021BA95 /* UIColor+CHColors.m */; };
-		218849ED20B198E40021BA95 /* CHChemistryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849EC20B198E40021BA95 /* CHChemistryCollectionViewCell.m */; };
-		218849F020B1D6000021BA95 /* CHEquationInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849EF20B1D6000021BA95 /* CHEquationInputViewModel.m */; };
-		218849F320B1D7020021BA95 /* CHBalanceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849F220B1D7020021BA95 /* CHBalanceViewModel.m */; };
-		218849F620B1D8890021BA95 /* CHBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849F520B1D8890021BA95 /* CHBaseViewModel.m */; };
-		218849F920B1D91F0021BA95 /* CHBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849F820B1D91F0021BA95 /* CHBaseView.m */; };
 		21884A0420B1E4C00021BA95 /* CHLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21884A0320B1E4C00021BA95 /* CHLocalizable.strings */; };
-		21884A0B20B1F4360021BA95 /* CHBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21884A0A20B1F4360021BA95 /* CHBaseCollectionViewCell.m */; };
-		21884A0E20B1F55A0021BA95 /* CHClickableElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 21884A0D20B1F55A0021BA95 /* CHClickableElement.m */; };
-		21884A4220B33C200021BA95 /* UIImage+CHColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 21884A4120B33C200021BA95 /* UIImage+CHColors.m */; };
+		218C5E8320BE7CC000486265 /* CHBalanceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E5120BE7CC000486265 /* CHBalanceViewModel.m */; };
+		218C5E8420BE7CC000486265 /* CHEquationInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E5420BE7CC000486265 /* CHEquationInputViewModel.m */; };
+		218C5E8520BE7CC000486265 /* CHChemistryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E5620BE7CC000486265 /* CHChemistryCollectionViewCell.m */; };
+		218C5E8620BE7CC000486265 /* CHBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E5820BE7CC000486265 /* CHBalanceViewController.m */; };
+		218C5E8720BE7CC000486265 /* CHEquationInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E5B20BE7CC000486265 /* CHEquationInputView.m */; };
+		218C5E8820BE7CC000486265 /* CHBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E5F20BE7CC000486265 /* CHBaseViewModel.m */; };
+		218C5E8920BE7CC000486265 /* CHBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E6120BE7CC000486265 /* CHBaseView.m */; };
+		218C5E8A20BE7CC000486265 /* CHBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E6220BE7CC000486265 /* CHBaseCollectionViewCell.m */; };
+		218C5E8B20BE7CC000486265 /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E6320BE7CC000486265 /* CHBaseViewController.m */; };
+		218C5E8C20BE7CC000486265 /* TopmostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E6A20BE7CC000486265 /* TopmostView.m */; };
+		218C5E8D20BE7CC000486265 /* CHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E6C20BE7CC000486265 /* CHToast.m */; };
+		218C5E8E20BE7CC000486265 /* UIImage+CHColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E6F20BE7CC000486265 /* UIImage+CHColors.m */; };
+		218C5E8F20BE7CC000486265 /* UIFont+CHFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E7220BE7CC000486265 /* UIFont+CHFonts.m */; };
+		218C5E9120BE7CC000486265 /* UIColor+CHColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E7520BE7CC000486265 /* UIColor+CHColors.m */; };
+		218C5E9220BE7CC000486265 /* CHEquationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E7920BE7CC000486265 /* CHEquationManager.m */; };
+		218C5E9320BE7CC000486265 /* CHEquationObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E7D20BE7CC000486265 /* CHEquationObj.m */; };
+		218C5E9420BE7CC000486265 /* CHClickableElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E8020BE7CC000486265 /* CHClickableElement.m */; };
+		218C5E9820BE861F00486265 /* CHEquationBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E9720BE861F00486265 /* CHEquationBalance.m */; };
 		97F8E8062C0B82BFE695F8E2 /* libPods-balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */; };
 /* End PBXBuildFile section */
 
@@ -37,33 +43,45 @@
 		218849C120B17B470021BA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218849C320B17B470021BA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218849C420B17B470021BA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		218849D020B17E660021BA95 /* CHEquationInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEquationInputView.h; sourceTree = "<group>"; };
-		218849D120B17E660021BA95 /* CHBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBalanceViewController.m; sourceTree = "<group>"; };
-		218849D220B17E660021BA95 /* CHBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBalanceViewController.h; sourceTree = "<group>"; };
-		218849D320B17E660021BA95 /* CHEquationInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEquationInputView.m; sourceTree = "<group>"; };
-		218849D820B17E660021BA95 /* CHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewController.m; sourceTree = "<group>"; };
-		218849D920B17E660021BA95 /* CHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseViewController.h; sourceTree = "<group>"; };
 		218849E120B17FE90021BA95 /* balance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "balance-Prefix.pch"; sourceTree = "<group>"; };
-		218849E720B189D50021BA95 /* UIColor+CHColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CHColors.h"; sourceTree = "<group>"; };
-		218849E820B189D50021BA95 /* UIColor+CHColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CHColors.m"; sourceTree = "<group>"; };
-		218849EB20B198E40021BA95 /* CHChemistryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHChemistryCollectionViewCell.h; sourceTree = "<group>"; };
-		218849EC20B198E40021BA95 /* CHChemistryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHChemistryCollectionViewCell.m; sourceTree = "<group>"; };
-		218849EE20B1D6000021BA95 /* CHEquationInputViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHEquationInputViewModel.h; sourceTree = "<group>"; };
-		218849EF20B1D6000021BA95 /* CHEquationInputViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHEquationInputViewModel.m; sourceTree = "<group>"; };
-		218849F120B1D7020021BA95 /* CHBalanceViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBalanceViewModel.h; sourceTree = "<group>"; };
-		218849F220B1D7020021BA95 /* CHBalanceViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBalanceViewModel.m; sourceTree = "<group>"; };
-		218849F420B1D8890021BA95 /* CHBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBaseViewModel.h; sourceTree = "<group>"; };
-		218849F520B1D8890021BA95 /* CHBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewModel.m; sourceTree = "<group>"; };
-		218849F720B1D91F0021BA95 /* CHBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBaseView.h; sourceTree = "<group>"; };
-		218849F820B1D91F0021BA95 /* CHBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBaseView.m; sourceTree = "<group>"; };
 		21884A0320B1E4C00021BA95 /* CHLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = CHLocalizable.strings; sourceTree = "<group>"; };
 		21884A0520B1E4D30021BA95 /* CHMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHMacros.h; sourceTree = "<group>"; };
-		21884A0920B1F4360021BA95 /* CHBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBaseCollectionViewCell.h; sourceTree = "<group>"; };
-		21884A0A20B1F4360021BA95 /* CHBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBaseCollectionViewCell.m; sourceTree = "<group>"; };
-		21884A0C20B1F55A0021BA95 /* CHClickableElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHClickableElement.h; sourceTree = "<group>"; };
-		21884A0D20B1F55A0021BA95 /* CHClickableElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHClickableElement.m; sourceTree = "<group>"; };
-		21884A4020B33C200021BA95 /* UIImage+CHColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CHColors.h"; sourceTree = "<group>"; };
-		21884A4120B33C200021BA95 /* UIImage+CHColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CHColors.m"; sourceTree = "<group>"; };
+		218C5E5120BE7CC000486265 /* CHBalanceViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBalanceViewModel.m; sourceTree = "<group>"; };
+		218C5E5220BE7CC000486265 /* CHEquationInputViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEquationInputViewModel.h; sourceTree = "<group>"; };
+		218C5E5320BE7CC000486265 /* CHBalanceViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBalanceViewModel.h; sourceTree = "<group>"; };
+		218C5E5420BE7CC000486265 /* CHEquationInputViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEquationInputViewModel.m; sourceTree = "<group>"; };
+		218C5E5620BE7CC000486265 /* CHChemistryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHChemistryCollectionViewCell.m; sourceTree = "<group>"; };
+		218C5E5720BE7CC000486265 /* CHEquationInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEquationInputView.h; sourceTree = "<group>"; };
+		218C5E5820BE7CC000486265 /* CHBalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBalanceViewController.m; sourceTree = "<group>"; };
+		218C5E5920BE7CC000486265 /* CHChemistryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHChemistryCollectionViewCell.h; sourceTree = "<group>"; };
+		218C5E5A20BE7CC000486265 /* CHBalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBalanceViewController.h; sourceTree = "<group>"; };
+		218C5E5B20BE7CC000486265 /* CHEquationInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEquationInputView.m; sourceTree = "<group>"; };
+		218C5E5E20BE7CC000486265 /* CHBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseViewModel.h; sourceTree = "<group>"; };
+		218C5E5F20BE7CC000486265 /* CHBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewModel.m; sourceTree = "<group>"; };
+		218C5E6120BE7CC000486265 /* CHBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseView.m; sourceTree = "<group>"; };
+		218C5E6220BE7CC000486265 /* CHBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		218C5E6320BE7CC000486265 /* CHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewController.m; sourceTree = "<group>"; };
+		218C5E6420BE7CC000486265 /* CHBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseView.h; sourceTree = "<group>"; };
+		218C5E6520BE7CC000486265 /* CHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseViewController.h; sourceTree = "<group>"; };
+		218C5E6620BE7CC000486265 /* CHBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		218C5E6920BE7CC000486265 /* CHToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHToast.h; sourceTree = "<group>"; };
+		218C5E6A20BE7CC000486265 /* TopmostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopmostView.m; sourceTree = "<group>"; };
+		218C5E6B20BE7CC000486265 /* TopmostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopmostView.h; sourceTree = "<group>"; };
+		218C5E6C20BE7CC000486265 /* CHToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHToast.m; sourceTree = "<group>"; };
+		218C5E6F20BE7CC000486265 /* UIImage+CHColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CHColors.m"; sourceTree = "<group>"; };
+		218C5E7020BE7CC000486265 /* UIColor+CHColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CHColors.h"; sourceTree = "<group>"; };
+		218C5E7220BE7CC000486265 /* UIFont+CHFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CHFonts.m"; sourceTree = "<group>"; };
+		218C5E7320BE7CC000486265 /* UIImage+CHColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CHColors.h"; sourceTree = "<group>"; };
+		218C5E7520BE7CC000486265 /* UIColor+CHColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CHColors.m"; sourceTree = "<group>"; };
+		218C5E7620BE7CC000486265 /* UIFont+CHFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CHFonts.h"; sourceTree = "<group>"; };
+		218C5E7920BE7CC000486265 /* CHEquationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEquationManager.m; sourceTree = "<group>"; };
+		218C5E7A20BE7CC000486265 /* CHEquationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEquationManager.h; sourceTree = "<group>"; };
+		218C5E7D20BE7CC000486265 /* CHEquationObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEquationObj.m; sourceTree = "<group>"; };
+		218C5E7E20BE7CC000486265 /* CHEquationObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEquationObj.h; sourceTree = "<group>"; };
+		218C5E8020BE7CC000486265 /* CHClickableElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHClickableElement.m; sourceTree = "<group>"; };
+		218C5E8120BE7CC000486265 /* CHClickableElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHClickableElement.h; sourceTree = "<group>"; };
+		218C5E9620BE861F00486265 /* CHEquationBalance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHEquationBalance.h; sourceTree = "<group>"; };
+		218C5E9720BE861F00486265 /* CHEquationBalance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHEquationBalance.m; sourceTree = "<group>"; };
 		802C5E3FF81DB0651A59162F /* Pods-balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.release.xcconfig"; sourceTree = "<group>"; };
 		A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-balance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEC3954E15E9918D03C459A /* Pods-balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +129,7 @@
 		218849B420B17B450021BA95 /* balance */ = {
 			isa = PBXGroup;
 			children = (
-				218849CB20B17E660021BA95 /* chemistry */,
+				218C5E4D20BE7CC000486265 /* Classes */,
 				218849B520B17B450021BA95 /* AppDelegate.h */,
 				218849B620B17B450021BA95 /* AppDelegate.m */,
 				21884A0520B1E4D30021BA95 /* CHMacros.h */,
@@ -126,115 +144,191 @@
 			path = balance;
 			sourceTree = "<group>";
 		};
-		218849CB20B17E660021BA95 /* chemistry */ = {
+		218C5E4D20BE7CC000486265 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				218849CC20B17E660021BA95 /* Balance */,
-				218849D420B17E660021BA95 /* Base */,
-				218849E520B189960021BA95 /* Config */,
+				218C5E4E20BE7CC000486265 /* UI */,
+				218C5E6720BE7CC000486265 /* Tools */,
+				218C5E6D20BE7CC000486265 /* Category */,
 			);
-			path = chemistry;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		218849CC20B17E660021BA95 /* Balance */ = {
+		218C5E4E20BE7CC000486265 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				218849CD20B17E660021BA95 /* ViewModel */,
-				218849CE20B17E660021BA95 /* Model */,
-				218849CF20B17E660021BA95 /* View */,
+				218C5E7720BE7CC000486265 /* Singleton */,
+				218C5E7B20BE7CC000486265 /* Model */,
+				218C5E4F20BE7CC000486265 /* Balance */,
+				218C5E5C20BE7CC000486265 /* Base */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		218C5E4F20BE7CC000486265 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E5020BE7CC000486265 /* ViewModel */,
+				218C5E5520BE7CC000486265 /* View */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
 		};
-		218849CD20B17E660021BA95 /* ViewModel */ = {
+		218C5E5020BE7CC000486265 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				218849F120B1D7020021BA95 /* CHBalanceViewModel.h */,
-				218849F220B1D7020021BA95 /* CHBalanceViewModel.m */,
-				218849EE20B1D6000021BA95 /* CHEquationInputViewModel.h */,
-				218849EF20B1D6000021BA95 /* CHEquationInputViewModel.m */,
+				218C5E5220BE7CC000486265 /* CHEquationInputViewModel.h */,
+				218C5E5420BE7CC000486265 /* CHEquationInputViewModel.m */,
+				218C5E5320BE7CC000486265 /* CHBalanceViewModel.h */,
+				218C5E5120BE7CC000486265 /* CHBalanceViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		218849CE20B17E660021BA95 /* Model */ = {
+		218C5E5520BE7CC000486265 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21884A0C20B1F55A0021BA95 /* CHClickableElement.h */,
-				21884A0D20B1F55A0021BA95 /* CHClickableElement.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		218849CF20B17E660021BA95 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				218849D220B17E660021BA95 /* CHBalanceViewController.h */,
-				218849D120B17E660021BA95 /* CHBalanceViewController.m */,
-				218849D020B17E660021BA95 /* CHEquationInputView.h */,
-				218849D320B17E660021BA95 /* CHEquationInputView.m */,
-				218849EB20B198E40021BA95 /* CHChemistryCollectionViewCell.h */,
-				218849EC20B198E40021BA95 /* CHChemistryCollectionViewCell.m */,
+				218C5E5720BE7CC000486265 /* CHEquationInputView.h */,
+				218C5E5B20BE7CC000486265 /* CHEquationInputView.m */,
+				218C5E5920BE7CC000486265 /* CHChemistryCollectionViewCell.h */,
+				218C5E5620BE7CC000486265 /* CHChemistryCollectionViewCell.m */,
+				218C5E5A20BE7CC000486265 /* CHBalanceViewController.h */,
+				218C5E5820BE7CC000486265 /* CHBalanceViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		218849D420B17E660021BA95 /* Base */ = {
+		218C5E5C20BE7CC000486265 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				218849D520B17E660021BA95 /* ViewModel */,
-				218849D620B17E660021BA95 /* Model */,
-				218849D720B17E660021BA95 /* View */,
+				218C5E5D20BE7CC000486265 /* ViewModel */,
+				218C5E6020BE7CC000486265 /* View */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		218849D520B17E660021BA95 /* ViewModel */ = {
+		218C5E5D20BE7CC000486265 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				218849F420B1D8890021BA95 /* CHBaseViewModel.h */,
-				218849F520B1D8890021BA95 /* CHBaseViewModel.m */,
+				218C5E5E20BE7CC000486265 /* CHBaseViewModel.h */,
+				218C5E5F20BE7CC000486265 /* CHBaseViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		218849D620B17E660021BA95 /* Model */ = {
+		218C5E6020BE7CC000486265 /* View */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		218849D720B17E660021BA95 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				218849D920B17E660021BA95 /* CHBaseViewController.h */,
-				218849D820B17E660021BA95 /* CHBaseViewController.m */,
-				21884A0920B1F4360021BA95 /* CHBaseCollectionViewCell.h */,
-				21884A0A20B1F4360021BA95 /* CHBaseCollectionViewCell.m */,
-				218849F720B1D91F0021BA95 /* CHBaseView.h */,
-				218849F820B1D91F0021BA95 /* CHBaseView.m */,
+				218C5E6420BE7CC000486265 /* CHBaseView.h */,
+				218C5E6120BE7CC000486265 /* CHBaseView.m */,
+				218C5E6620BE7CC000486265 /* CHBaseCollectionViewCell.h */,
+				218C5E6220BE7CC000486265 /* CHBaseCollectionViewCell.m */,
+				218C5E6520BE7CC000486265 /* CHBaseViewController.h */,
+				218C5E6320BE7CC000486265 /* CHBaseViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		218849E520B189960021BA95 /* Config */ = {
+		218C5E6720BE7CC000486265 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				218849E620B189960021BA95 /* Color */,
+				218C5E9520BE860F00486265 /* Equation */,
+				218C5E6820BE7CC000486265 /* Toast */,
 			);
-			path = Config;
+			path = Tools;
 			sourceTree = "<group>";
 		};
-		218849E620B189960021BA95 /* Color */ = {
+		218C5E6820BE7CC000486265 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
-				218849E720B189D50021BA95 /* UIColor+CHColors.h */,
-				218849E820B189D50021BA95 /* UIColor+CHColors.m */,
-				21884A4020B33C200021BA95 /* UIImage+CHColors.h */,
-				21884A4120B33C200021BA95 /* UIImage+CHColors.m */,
+				218C5E6920BE7CC000486265 /* CHToast.h */,
+				218C5E6C20BE7CC000486265 /* CHToast.m */,
+				218C5E6B20BE7CC000486265 /* TopmostView.h */,
+				218C5E6A20BE7CC000486265 /* TopmostView.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		218C5E6D20BE7CC000486265 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E6E20BE7CC000486265 /* Color */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		218C5E6E20BE7CC000486265 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E7020BE7CC000486265 /* UIColor+CHColors.h */,
+				218C5E7520BE7CC000486265 /* UIColor+CHColors.m */,
+				218C5E7320BE7CC000486265 /* UIImage+CHColors.h */,
+				218C5E6F20BE7CC000486265 /* UIImage+CHColors.m */,
+				218C5E7620BE7CC000486265 /* UIFont+CHFonts.h */,
+				218C5E7220BE7CC000486265 /* UIFont+CHFonts.m */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		218C5E7720BE7CC000486265 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E7820BE7CC000486265 /* Equation */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		218C5E7820BE7CC000486265 /* Equation */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E7A20BE7CC000486265 /* CHEquationManager.h */,
+				218C5E7920BE7CC000486265 /* CHEquationManager.m */,
+			);
+			path = Equation;
+			sourceTree = "<group>";
+		};
+		218C5E7B20BE7CC000486265 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E7C20BE7CC000486265 /* Equation */,
+				218C5E7F20BE7CC000486265 /* Element */,
+				218C5E8220BE7CC000486265 /* Base */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		218C5E7C20BE7CC000486265 /* Equation */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E7E20BE7CC000486265 /* CHEquationObj.h */,
+				218C5E7D20BE7CC000486265 /* CHEquationObj.m */,
+			);
+			path = Equation;
+			sourceTree = "<group>";
+		};
+		218C5E7F20BE7CC000486265 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E8120BE7CC000486265 /* CHClickableElement.h */,
+				218C5E8020BE7CC000486265 /* CHClickableElement.m */,
+			);
+			path = Element;
+			sourceTree = "<group>";
+		};
+		218C5E8220BE7CC000486265 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		218C5E9520BE860F00486265 /* Equation */ = {
+			isa = PBXGroup;
+			children = (
+				218C5E9620BE861F00486265 /* CHEquationBalance.h */,
+				218C5E9720BE861F00486265 /* CHEquationBalance.m */,
+			);
+			path = Equation;
 			sourceTree = "<group>";
 		};
 		7AD76CE5513791CAF6736625 /* Frameworks */ = {
@@ -338,19 +432,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218849DA20B17E660021BA95 /* CHBalanceViewController.m in Sources */,
-				218849F020B1D6000021BA95 /* CHEquationInputViewModel.m in Sources */,
-				218849F620B1D8890021BA95 /* CHBaseViewModel.m in Sources */,
-				218849F920B1D91F0021BA95 /* CHBaseView.m in Sources */,
-				218849DC20B17E660021BA95 /* CHBaseViewController.m in Sources */,
-				218849F320B1D7020021BA95 /* CHBalanceViewModel.m in Sources */,
-				21884A4220B33C200021BA95 /* UIImage+CHColors.m in Sources */,
 				218849C520B17B470021BA95 /* main.m in Sources */,
-				21884A0B20B1F4360021BA95 /* CHBaseCollectionViewCell.m in Sources */,
-				218849ED20B198E40021BA95 /* CHChemistryCollectionViewCell.m in Sources */,
-				21884A0E20B1F55A0021BA95 /* CHClickableElement.m in Sources */,
-				218849DB20B17E660021BA95 /* CHEquationInputView.m in Sources */,
-				218849E920B189D50021BA95 /* UIColor+CHColors.m in Sources */,
+				218C5E8920BE7CC000486265 /* CHBaseView.m in Sources */,
+				218C5E9220BE7CC000486265 /* CHEquationManager.m in Sources */,
+				218C5E8F20BE7CC000486265 /* UIFont+CHFonts.m in Sources */,
+				218C5E8A20BE7CC000486265 /* CHBaseCollectionViewCell.m in Sources */,
+				218C5E9420BE7CC000486265 /* CHClickableElement.m in Sources */,
+				218C5E8320BE7CC000486265 /* CHBalanceViewModel.m in Sources */,
+				218C5E9120BE7CC000486265 /* UIColor+CHColors.m in Sources */,
+				218C5E8420BE7CC000486265 /* CHEquationInputViewModel.m in Sources */,
+				218C5E8C20BE7CC000486265 /* TopmostView.m in Sources */,
+				218C5E8E20BE7CC000486265 /* UIImage+CHColors.m in Sources */,
+				218C5E8B20BE7CC000486265 /* CHBaseViewController.m in Sources */,
+				218C5E8520BE7CC000486265 /* CHChemistryCollectionViewCell.m in Sources */,
+				218C5E9820BE861F00486265 /* CHEquationBalance.m in Sources */,
+				218C5E8720BE7CC000486265 /* CHEquationInputView.m in Sources */,
+				218C5E8D20BE7CC000486265 /* CHToast.m in Sources */,
+				218C5E8620BE7CC000486265 /* CHBalanceViewController.m in Sources */,
+				218C5E9320BE7CC000486265 /* CHEquationObj.m in Sources */,
+				218C5E8820BE7CC000486265 /* CHBaseViewModel.m in Sources */,
 				218849B720B17B450021BA95 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

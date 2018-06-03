@@ -15,5 +15,7 @@
 #define CHKeyboardHeight (CHScreenHeight * 370 / 523.0f)
 #define CHChemistryBoardWidth (CHScreenWidth * 363 / 866.0f)
 #define CHOperatorBoardWidth (CHScreenWidth * 503 / 866.0f)
+#define CHLineWidth (1.0/[UIScreen mainScreen].scale)
+#define CHMAX 10
 
 #endif /* CHMacros_h */
