@@ -53,6 +53,7 @@
     for (NSInteger i = 0; i < rows; i ++) {
         [result addObject:@([inputArr[i][rows] floatValue] / [inputArr[i][i] floatValue])];
     }
+    [result addObject:@1];
     return result;
 }
 

@@ -17,10 +17,12 @@
 @property (nonatomic , strong) NSMutableArray *subObjs;
 @property (nonatomic , assign) NSInteger price;  //离子价
 @property (nonatomic , assign) NSInteger count;  //个数
-//@property (nonatomic , strong) NSMutableString *currentTitle;
+@property (nonatomic , strong) NSString *currentTitle;
 @property (nonatomic , strong) NSString *title;
 @property (nonatomic , weak) CHEquationObj *fatherObj;
+
 - (NSArray *)allChemistrys;
+- (NSInteger)price;
 - (NSInteger)multipleOfChemistry:(NSString *)chemistry;
 //- (NSInteger)price;
 

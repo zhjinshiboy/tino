@@ -175,18 +175,41 @@
     return model;
 }
 
+- (NSInteger)price {
+    return 0;
+}
+
 - (NSArray *)allChemistrys {
 //    return self.chemistryDic.allKeys;
 //    for (<#type *object#> in <#collection#>) {
 //        <#statements#>
 //    }
-    return nil;
+    NSMutableArray *arr = [NSMutableArray array];
+    if (self.title) {
+        [arr addObject:self.title];
+    }else if(self.subObjs.count){
+        for (CHEquationObj *obj in self.subObjs) {
+            NSArray *chemistrys = [obj allChemistrys];
+            for (NSString *tmp in chemistrys) {
+                if (![arr containsObject:tmp]) {
+                    [arr addObject:tmp];
+                }
+            }
+        }
+    }
+    return arr;
 }
 
 - (NSInteger)multipleOfChemistry:(NSString *)chemistry {
-//    if ([self.chemistryDic.allKeys containsObject:chemistry]) {
-//        return [[self.chemistryDic objectForKey:chemistry] integerValue];
-//    }
+    if ([self.title isEqualToString:chemistry]) {
+        return self.count;
+    }else if(self.subObjs.count){
+        NSInteger count = 0;
+        for (CHEquationObj *obj in self.subObjs) {
+            count += [obj multipleOfChemistry:chemistry];
+        }
+        return self.count * count;
+    }
     return 0;
 }
 
