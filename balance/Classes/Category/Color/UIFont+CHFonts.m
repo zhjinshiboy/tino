@@ -14,6 +14,7 @@
  colorNumber:
  0:通用按钮font
  1:输出台font
+ 2:balance按钮font
  */
 
 + (UIFont *)fontWithNumber:(NSInteger)fontNumber {
@@ -24,7 +25,9 @@
         case 1:
             return [UIFont systemFontOfSize:40];
             break;
-            
+        case 2:
+            return [UIFont systemFontOfSize:20];
+            break;
         default:
             break;
     }

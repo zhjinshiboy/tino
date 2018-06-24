@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2120B61620DF38850079CC8D /* CHChemistryTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2120B61420DF38850079CC8D /* CHChemistryTableVC.m */; };
-		2120B61720DF38850079CC8D /* CHChemistryTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2120B61520DF38850079CC8D /* CHChemistryTableVC.xib */; };
 		218849B720B17B450021BA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218849B620B17B450021BA95 /* AppDelegate.m */; };
 		218849BD20B17B450021BA95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218849BB20B17B450021BA95 /* Main.storyboard */; };
 		218849BF20B17B470021BA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218849BE20B17B470021BA95 /* Assets.xcassets */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		2120B61320DF38850079CC8D /* CHChemistryTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHChemistryTableVC.h; sourceTree = "<group>"; };
 		2120B61420DF38850079CC8D /* CHChemistryTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHChemistryTableVC.m; sourceTree = "<group>"; };
-		2120B61520DF38850079CC8D /* CHChemistryTableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CHChemistryTableVC.xib; sourceTree = "<group>"; };
 		218849B220B17B450021BA95 /* balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = balance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218849B520B17B450021BA95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		218849B620B17B450021BA95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				2120B61320DF38850079CC8D /* CHChemistryTableVC.h */,
 				2120B61420DF38850079CC8D /* CHChemistryTableVC.m */,
-				2120B61520DF38850079CC8D /* CHChemistryTableVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				218849BF20B17B470021BA95 /* Assets.xcassets in Resources */,
 				21884A0420B1E4C00021BA95 /* CHLocalizable.strings in Resources */,
 				218849BD20B17B450021BA95 /* Main.storyboard in Resources */,
-				2120B61720DF38850079CC8D /* CHChemistryTableVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

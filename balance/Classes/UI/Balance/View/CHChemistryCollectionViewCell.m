@@ -33,6 +33,11 @@
     [self.btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithNumber:element.colorNumber]] forState:UIControlStateNormal];
     [self.btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithNumber:element.colorNumber]] forState:UIControlStateDisabled];
     [self.btn setTitle:element.title forState:UIControlStateNormal];
+    if ([element.title isEqualToString:@"Balance"]) {
+        [self.btn.titleLabel setFont:[UIFont fontWithNumber:2]];
+    }else {
+        [self.btn.titleLabel setFont:[UIFont fontWithNumber:0]];
+    }
     @weakify(self);
     [[[self.btn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:[self rac_prepareForReuseSignal]] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
