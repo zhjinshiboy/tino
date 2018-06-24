@@ -10,6 +10,7 @@
 #import "CHEquationObj.h"
 #import "CHToast.h"
 #import "CHEquationBalance.h"
+#import "CHChemistryTableVC.h"
 
 @interface CHEquationManager()
 @property (nonatomic , strong) NSMutableArray *leftObjs;
@@ -44,7 +45,9 @@
             break;
         case CHClickableElementTypePeriodicTable:
         {
-            
+            UIWindow *window = [UIApplication sharedApplication].windows.lastObject;
+            UIViewController *vc = window.rootViewController;
+            [vc presentViewController:[CHChemistryTableVC new] animated:YES completion:nil];
         }
             break;
         case CHClickableElementTypeShiftSign:
@@ -127,7 +130,7 @@
 //    self.currentConsole = [NSMutableString stringWithString:@"HNO₃→H₂+N₂+O₂"];
 //    self.currentConsole = [NSMutableString stringWithString:@"HNO₃→O₂+H₂+N₂"];
 //    self.currentConsole = [NSMutableString stringWithString:@"O₃→O₂"];
-    self.currentConsole = [NSMutableString stringWithString:@"FeO+HNO₃→Fe(NO₃)₃+NO+H₂O"];
+//    self.currentConsole = [NSMutableString stringWithString:@"FeO+HNO₃→Fe(NO₃)₃+NO+H₂O"];
     NSMutableArray *XArr = [NSMutableArray array];
     NSTextCheckingResult *match = [CHEquationObj matchText:self.currentConsole regular:@"^([^→]+)→([^→]+)$"];
     [CHEquationObj logMatch:match text:self.currentConsole];
