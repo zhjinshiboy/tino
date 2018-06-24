@@ -10,6 +10,17 @@
 
 @implementation CHEquationBalance
 
++ (NSArray *)balanceEqationWithInput1:(NSArray *)inputArr {
+    if (!inputArr.count) {
+        return nil;
+    }
+    NSArray *tmp = inputArr[0];
+    for (NSArray *arr in inputArr) {
+//        <#statements#>
+    }
+    return @[];
+}
+
 + (NSArray *)balanceEqationWithInput:(NSArray *)inputArr {
     NSInteger rows = inputArr.count;
     NSArray *tempForCols = inputArr[0];
@@ -50,10 +61,15 @@
     }
     
     NSMutableArray *result = [NSMutableArray array];
+    CGFloat common = 1.0f;
     for (NSInteger i = 0; i < rows; i ++) {
-        [result addObject:@([inputArr[i][rows] floatValue] / [inputArr[i][i] floatValue])];
+        CGFloat number = [inputArr[i][i] floatValue];
+        common *= number;
     }
-    [result addObject:@1];
+    for (NSInteger i = 0; i < rows; i ++) {
+        [result addObject:@([inputArr[i][rows] floatValue] * common / [inputArr[i][i] floatValue])];
+    }
+    [result addObject:@(common)];
     return result;
 }
 

@@ -14,8 +14,6 @@
 @interface CHEquationManager()
 @property (nonatomic , strong) NSMutableArray *leftObjs;
 @property (nonatomic , strong) NSMutableArray *rightObjs;
-//@property (nonatomic , strong) CHEquationObj *currentObj;
-//@property (nonatomic , strong) CHEquationObj *currentSubObj;
 @end
 
 @implementation CHEquationManager
@@ -28,15 +26,11 @@
     });
     return manager;
 }
-//¹₁²₂³₃⁴₄⁵₅⁶₆⁷₇⁸₈⁹₉⁰₀⁺₊⁻₋₍₎⁽⁾
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-//        CHEquationObj *obj = [CHEquationObj new];
-//        [obj matchText:@"H⁺"];
-//        NSLog(@"%@",obj);
-//        [self.currentConsole appendString:@"H₂+O₂→H₂O"];
     }
     return self;
 }
@@ -67,6 +61,8 @@
         case CHClickableElementTypeClealSign:
         {
             //todo clean
+            [self.leftObjs removeAllObjects];
+            [self.rightObjs removeAllObjects];
             [self.currentConsole deleteCharactersInRange:NSMakeRange(0, self.currentConsole.length)];
         }
             break;
@@ -126,19 +122,13 @@
 
 #pragma mark - action
 - (void)calculateResult {
-    NSMutableArray *A = [NSMutableArray arrayWithObjects:
-                         [NSMutableArray arrayWithObjects:@1,@0,@0,@-1,@0,@0,nil],
-                         [NSMutableArray arrayWithObjects:@0,@1,@0,@0,@0,@2,nil],
-                         [NSMutableArray arrayWithObjects:@1,@0,@3,@0,@-1,@1,nil],
-                          [NSMutableArray arrayWithObjects:@0,@1,@-1,@-2,@0,@0,nil],
-                         [NSMutableArray arrayWithObjects:@0,@0,@1,@0,@-1,@0,nil],
-                        
-                          nil];
-//    NSMutableArray *B = [NSMutableArray arrayWithObjects:@0,@2,@0, nil];
+//    self.currentConsole = [NSMutableString stringWithString:@"FeO+HNO₃→FeO+H₂"];
+//    self.currentConsole = [NSMutableString stringWithString:@"HNO₂+HNO₄→HNO₃"];
+//    self.currentConsole = [NSMutableString stringWithString:@"HNO₃→H₂+N₂+O₂"];
+//    self.currentConsole = [NSMutableString stringWithString:@"HNO₃→O₂+H₂+N₂"];
+//    self.currentConsole = [NSMutableString stringWithString:@"O₃→O₂"];
+    self.currentConsole = [NSMutableString stringWithString:@"FeO+HNO₃→Fe(NO₃)₃+NO+H₂O"];
     NSMutableArray *XArr = [NSMutableArray array];
-    
-//    NSLog(@"%@",[CHEquationBalance balanceEqationWithInput:A]);
-//    NSString *test = @"H(NO₃)₂⁵⁺";
     NSTextCheckingResult *match = [CHEquationObj matchText:self.currentConsole regular:@"^([^→]+)→([^→]+)$"];
     [CHEquationObj logMatch:match text:self.currentConsole];
     if (!match) {
@@ -161,19 +151,78 @@
             }
         }
     }
-//    NSMutableDictionary *leftDic = [NSMutableDictionary dictionary];
+    NSMutableArray *rightArr = [NSMutableArray array];
+    for (CHEquationObj *obj in self.rightObjs) {
+        for (NSString *title in [obj allChemistrys]) {
+            if (![rightArr containsObject:title]) {
+                [rightArr addObject:title];
+            }
+        }
+    }
+    if (leftArr.count != rightArr.count) {
+        [CHToast showCenterToast:@"方程两侧不匹配"];
+        return;
+    }else {
+        BOOL equal = YES;
+        for (NSString *title in leftArr) {
+            if (![rightArr containsObject:title]) {
+                equal = NO;
+            }
+        }
+        if (!equal) {
+            [CHToast showCenterToast:@"方程两侧不匹配"];
+            return;
+        }
+    }
+    
     for (NSString *title in leftArr) {
         NSMutableArray *arr = [NSMutableArray array];
+        printf("\n");
         for (CHEquationObj *obj in self.leftObjs) {
-            [arr addObject:@([obj multipleOfChemistry:title])];
+            NSInteger number = [obj multipleOfChemistry:title];
+            [arr addObject:@(number)];
+            printf("%d ",(int)number);
         }
         for (CHEquationObj *obj in self.rightObjs) {
-            [arr addObject:@([obj multipleOfChemistry:title])];
+            NSInteger number = [obj multipleOfChemistry:title];
+            [arr addObject:@(number)];
+            printf("%d ",(int)number);
         }
         [XArr addObject:arr];
     }
-    NSArray *arr = [CHEquationBalance balanceEqationWithInput:XArr];
+    printf("\n");
+    
+    NSMutableArray *YArr = [NSMutableArray array];
+    for (NSArray *x in XArr) {
+        BOOL exist = NO;
+        for (NSArray *y in YArr) {
+            BOOL equal = YES;
+            for (NSInteger i = 0; i < x.count; i ++) {
+                if ([x[i] integerValue] != [y[i] integerValue]) {
+                    equal = NO;
+                    break;
+                }
+            }
+            if (equal) {
+                exist = YES;
+                break;
+            }
+        }
+        if (!exist) {
+            [YArr addObject:x];
+        }
+    }
+    
+    YArr = [self sortArr:YArr index:0];
+    
+    NSArray *arr = [CHEquationBalance balanceEqationWithInput:YArr];
     NSLog(@"%@",arr);
+    for (id x in arr) {
+        if (isnan([x doubleValue])) {
+            [CHToast showCenterToast:@"方程式错误，无法配平"];
+            return;
+        }
+    }
     arr = [self configArr:arr];
     NSMutableString *string = [NSMutableString string];
     for (NSInteger i = 0; i < self.leftObjs.count; i ++ ) {
@@ -187,7 +236,9 @@
     }
     for (NSInteger i = 0; i < self.rightObjs.count; i ++ ) {
         CHEquationObj *obj = self.rightObjs[i];
-        [string appendString:[NSString stringWithFormat:@"%@%@",[arr[i + self.leftObjs.count] integerValue] == 1? @"":arr[i + self.leftObjs.count],obj.currentTitle]];
+        NSNumber *current = arr[i + self.leftObjs.count];
+        current = self.rightObjs.count - 1 == i?current:@(-current.integerValue);
+        [string appendString:[NSString stringWithFormat:@"%@%@",current.integerValue == 1? @"":current,obj.currentTitle]];
         if (i < self.rightObjs.count - 1 ) {
             [string appendString:@"+"];
         }
@@ -240,6 +291,31 @@
     return result;
 }
 
+- (NSMutableArray *)sortArr:(NSMutableArray *)inputArr index:(NSInteger)index {
+    NSMutableArray *result = [NSMutableArray array];
+    if (inputArr.count == 1) {
+        NSArray *arr = inputArr[0];
+        if ([arr[index] integerValue] != 0) {
+            [result addObject:arr];
+        }
+        return result;
+    }
+    for (NSInteger i = 0; i<inputArr.count; i++) {
+        NSArray *arr = inputArr[i];
+        if ([arr[index] integerValue] != 0) {
+            NSMutableArray *tmp = [inputArr mutableCopy];
+            [tmp removeObjectAtIndex:i];
+            NSMutableArray *others = [self sortArr:tmp index:index + 1];
+            if (others.count) {
+                [result addObject:arr];
+                [result addObjectsFromArray:others];
+                break;
+            }
+        }
+    }
+    return result;
+}
+
 - (NSArray *)parseString:(NSString *)string {
     NSTextCheckingResult * isOK = [CHEquationObj matchText:string regular:@"^(?<![+])[^+]+([+][^+]+)*(?![+])$"];
     if (!isOK) {
@@ -258,6 +334,13 @@
                 return nil;
             }
             NSString *first = [mutString substringWithRange:[matchChemistry rangeAtIndex:0]];
+            
+            NSTextCheckingResult *matchNumbers = [CHEquationObj matchText:first regular:@"[0-9]+"];
+            if (matchNumbers && [matchNumbers numberOfRanges]) {
+                NSRange range = [matchNumbers rangeAtIndex:0];
+                first = [first substringWithRange:NSMakeRange(range.length, first.length - range.length)];
+            }
+
             CHEquationObj *obj = [CHEquationObj new];
             [obj setCurrentTitle:first];
             [obj matchText:first];
@@ -283,7 +366,6 @@
             break;
         }
     }
-//    CHEquationObj matchText:string regular:@"()"
     return arr;
 }
 
