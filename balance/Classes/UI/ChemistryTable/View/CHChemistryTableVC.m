@@ -23,9 +23,10 @@
     [self.img mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    for (NSInteger i = 0; i < 103; i ++) {
+    for (NSInteger i = 0; i < 118; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTag:i + 100];
+//        [btn setBackgroundColor:[UIColor blackColor]];
         [self.view addSubview:btn];
         @weakify(self);
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -37,13 +38,13 @@
         CGFloat width = self.view.bounds.size.width;
         CGFloat height = self.view.bounds.size.height;
         NSInteger number = i + 1;
-        if (number < 57 || (number > 71 && number < 89) || number > 103) {
+        if (number < 58 || (number > 71 && number < 90) || number > 103) {
             [self calculateCommonLine:&line row:&row withChemistryNumber:number];
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.width.equalTo(self.img.mas_width).multipliedBy(32 / 667.0f);
-                make.height.equalTo(self.img.mas_height).multipliedBy(37 / 375.0f);
-                make.left.equalTo(self.img.mas_left).offset(32 / 667.0f * width + row * 32 / 667.0f * width);
-                make.top.equalTo(self.img.mas_top).offset(27 / 375.0f * height + line * 37 / 375.0f * height);
+                make.width.equalTo(self.img.mas_width).multipliedBy(31 / 667.0f);
+                make.height.equalTo(self.img.mas_height).multipliedBy(35 / 375.0f);
+                make.left.equalTo(self.img.mas_left).offset((10 + row * 31 + (row - 1) * 6) * width / 667.0f);
+                make.top.equalTo(self.img.mas_top).offset((19 + line * 35 + (line - 1) * 3) * height / 375.0f);
             }];
         }else {
             
@@ -53,7 +54,7 @@
 }
 
 - (void)clickByTag:(NSInteger)tag {
-    NSArray *titleArr = @[@"H",@"He",@"Li",@"Be",@"B",@"C",@"N",@"O",@"F",@"Ne",@"Na",@"Mg",@"Al",@"Si",@"P",@"S",@"Cl",@"Ar",@"K",@"Ca",@"Sc",@"Ti",@"V",@"Cr",@"Mn",@"Fe",@"Co",@"Ni",@"Cu",@"Zn",@"Ga",@"Ge",@"As",@"Se",@"Br",@"Kr",@"Rb",@"Sr",@"Y",@"Zr",@"Nb",@"Mo",@"Tc",@"Ru",@"Rh",@"Pd",@"Ag",@"Cd",@"In",@"Sn",@"Sb",@"Te",@"I",@"Xe",@"Cs",@"Ba",@"La",@"Ce",@"Pr",@"Nd",@"Pm",@"Sm",@"Eu",@"Gd",@"Tb",@"Dy",@"Ho",@"Er",@"Tm",@"Yb",@"Lu",@"Hf",@"Ta",@"W",@"Re",@"Os",@"Ir",@"Pt",@"Au",@"Hg",@"Tl",@"Pb",@"Bi",@"Po",@"At",@"Rn",@"Fr",@"Ra",@"Ac",@"Th",@"Pa",@"U",@"Np",@"Pu",@"Am",@"Cm",@"Bk",@"Cf",@"Es",@"Fm",@"Md",@"No",@"Lr",@"Rf",@"Db",@"Sg",@"Bh",@"Hs",@"Mt",@"Ds",@"Rg",@"Uub"];
+    NSArray *titleArr = [CHEquationManager defaultManager].chemistryArr;
     CHClickableElement *element = [[CHClickableElement alloc] initWithTitle:CHString(titleArr[tag - 100]) size:CGSizeZero type:CHClickableElementTypeChemistry colorNumber:0];
     [[CHEquationManager defaultManager] clickElement:element];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -80,7 +81,7 @@
     if (number >= 55 && number <= 86) {
         tableLine = 6;
     }
-    if (number >= 87 && number <= 112) {
+    if (number >= 87 && number <= 118) {
         tableLine = 7;
     }
     
@@ -90,7 +91,7 @@
     if (number == 4 || number == 12 || number == 20 || number == 38 || number == 56 || number == 88) {
         tableRow = 2;
     }
-    if (number == 21 || number == 39) {
+    if (number == 21 || number == 39 || number == 57 || number == 89) {
         tableRow = 3;
     }
     if (number == 22 || number == 40 || number == 72 || number == 104) {
@@ -120,22 +121,22 @@
     if (number == 30 || number == 48 || number == 80 || number == 112) {
         tableRow = 12;
     }
-    if (number == 5 || number == 13 || number == 31 || number == 49 || number == 81) {
+    if (number == 5 || number == 13 || number == 31 || number == 49 || number == 81 || number == 113) {
         tableRow = 13;
     }
-    if (number == 6 || number == 14 || number == 32 || number == 50 || number == 82) {
+    if (number == 6 || number == 14 || number == 32 || number == 50 || number == 82 || number == 114) {
         tableRow = 14;
     }
-    if (number == 7 || number == 15 || number == 33 || number == 51 || number == 83) {
+    if (number == 7 || number == 15 || number == 33 || number == 51 || number == 83 || number == 115) {
         tableRow = 15;
     }
-    if (number == 8 || number == 16 || number == 34 || number == 52 || number == 84) {
+    if (number == 8 || number == 16 || number == 34 || number == 52 || number == 84 || number == 116) {
         tableRow = 16;
     }
-    if (number == 9 || number == 17 || number == 35 || number == 53 || number == 85) {
+    if (number == 9 || number == 17 || number == 35 || number == 53 || number == 85 || number == 117) {
         tableRow = 17;
     }
-    if (number == 10 || number == 18 || number == 36 || number == 54 || number == 86) {
+    if (number == 2 || number == 10 || number == 18 || number == 36 || number == 54 || number == 86 || number == 118) {
         tableRow = 18;
     }
     

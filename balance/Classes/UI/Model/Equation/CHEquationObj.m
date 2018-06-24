@@ -120,7 +120,9 @@
         text = [text substringWithRange:NSMakeRange(0, [matchBlock1 rangeAtIndex:0].location)];
     }
     while (text.length) {
-        NSTextCheckingResult *matchChemistry = [CHEquationObj matchText:text regular:@"(H|N|O|Fe|F)([₁₂₃₄₅₆₇₈₉₀])*"];
+        NSString *regular = [NSString stringWithFormat:@"(%@)([₁₂₃₄₅₆₇₈₉₀])*",[CHEquationManager defaultManager].chemistryString];
+//        NSTextCheckingResult *matchChemistry = [CHEquationObj matchText:text regular:@"(H|N|O|Fe|F)([₁₂₃₄₅₆₇₈₉₀])*"];
+        NSTextCheckingResult *matchChemistry = [CHEquationObj matchText:text regular:regular];
         [CHEquationObj logMatch:matchChemistry text:text];
         if (matchChemistry) {
             if ([matchChemistry numberOfRanges] != 3) {
@@ -148,7 +150,7 @@
 }
 
 + (NSTextCheckingResult *)matchText:(NSString *)text regular:(NSString *)regular {
-    NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:regular options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:regular options:NSRegularExpressionAllowCommentsAndWhitespace error:nil];
     return [re firstMatchInString:text options:0 range:NSMakeRange(0, text.length)];
 }
 

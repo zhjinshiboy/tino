@@ -41,7 +41,7 @@
         for (NSInteger i = k + 1; i < rows; i++ , m++) {
             for (NSInteger j = k; j < cols; j ++) {
                 NSMutableArray *tmp = inputArr[i];
-                [tmp replaceObjectAtIndex:j withObject:@([inputArr[i][j] floatValue] - [temp[m] floatValue] * [inputArr[k][j] floatValue])];
+                [tmp replaceObjectAtIndex:j withObject:@([inputArr[i][j] floatValue] - (float)([temp[m] floatValue] * [inputArr[k][j] floatValue]))];
             }
         }
     }
@@ -55,11 +55,15 @@
         for (NSInteger i = k; i >= 0; i-- , m++) {
             for (NSInteger j = k; j < cols; j++) {
                 NSMutableArray *tmp = inputArr[k-i];
-                [tmp replaceObjectAtIndex:j withObject:@([inputArr[k - i][j] floatValue] - [temp[m] floatValue] * [inputArr[k + 1][j] floatValue])];
+                [tmp replaceObjectAtIndex:j withObject:@([inputArr[k - i][j] floatValue] - (float)([temp[m] floatValue] * [inputArr[k + 1][j] floatValue]))];
             }
         }
     }
-    
+    for (NSArray *arr in inputArr) {
+        for (NSNumber *number in arr) {
+            NSLog(@"\\%@\\%lf",number,number.floatValue);
+        }
+    }
     NSMutableArray *result = [NSMutableArray array];
     CGFloat common = 1.0f;
     for (NSInteger i = 0; i < rows; i ++) {
@@ -67,9 +71,11 @@
         common *= number;
     }
     for (NSInteger i = 0; i < rows; i ++) {
-        [result addObject:@([inputArr[i][rows] floatValue] * common / [inputArr[i][i] floatValue])];
+        CGFloat value = [inputArr[i][rows] floatValue] * common / [inputArr[i][i] floatValue];
+        NSLog(@"%lf * %lf / %lf = %lf",[inputArr[i][rows] floatValue],common,[inputArr[i][i] floatValue],value);
+        [result addObject:[NSNumber numberWithFloat:value]];
     }
-    [result addObject:@(common)];
+    [result addObject:[NSNumber numberWithFloat:common]];
     return result;
 }
 

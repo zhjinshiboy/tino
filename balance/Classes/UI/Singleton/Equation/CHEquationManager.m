@@ -32,6 +32,27 @@
 {
     self = [super init];
     if (self) {
+        self.chemistryArr =  @[@"H",@"He",@"Li",@"Be",@"B",@"C",@"N",@"O",@"F",@"Ne",@"Na",@"Mg",@"Al",@"Si",@"P",@"S",@"Cl",@"Ar",@"K",@"Ca",@"Sc",@"Ti",@"V",@"Cr",@"Mn",@"Fe",@"Co",@"Ni",@"Cu",@"Zn",@"Ga",@"Ge",@"As",@"Se",@"Br",@"Kr",@"Rb",@"Sr",@"Y",@"Zr",@"Nb",@"Mo",@"Tc",@"Ru",@"Rh",@"Pd",@"Ag",@"Cd",@"In",@"Sn",@"Sb",@"Te",@"I",@"Xe",@"Cs",@"Ba",@"La",@"Ce",@"Pr",@"Nd",@"Pm",@"Sm",@"Eu",@"Gd",@"Tb",@"Dy",@"Ho",@"Er",@"Tm",@"Yb",@"Lu",@"Hf",@"Ta",@"W",@"Re",@"Os",@"Ir",@"Pt",@"Au",@"Hg",@"Tl",@"Pb",@"Bi",@"Po",@"At",@"Rn",@"Fr",@"Ra",@"Ac",@"Th",@"Pa",@"U",@"Np",@"Pu",@"Am",@"Cm",@"Bk",@"Cf",@"Es",@"Fm",@"Md",@"No",@"Lr",@"Rf",@"Db",@"Sg",@"Bh",@"Hs",@"Mt",@"Ds",@"Rg",@"Cn",@"Uut",@"Uuq",@"Uup",@"Uuh",@"Uus",@"Uuo"];
+        NSMutableString *chemistryString = [NSMutableString string];
+        NSMutableArray *arr = [NSMutableArray array];
+        NSInteger i = 3;
+        while (i) {
+            for (NSString *string in self.chemistryArr) {
+                if (string.length == i) {
+                    [arr addObject:string];
+                }
+            }
+            i --;
+        }
+        for (NSString *string in arr) {
+//            [chemistryString appendString:@"["];
+            [chemistryString appendString:string];
+//            [chemistryString appendString:@"]"];
+            if ([self.chemistryArr indexOfObject:string] != self.chemistryArr.count - 1) {
+                [chemistryString appendString:@"|"];
+            }
+        }
+        self.chemistryString = chemistryString;
     }
     return self;
 }
@@ -71,7 +92,9 @@
             break;
         case CHClickableElementTypeDeleteSign:
         {
-            [self.currentConsole deleteCharactersInRange:NSMakeRange(self.currentConsole.length - 1, 1)];
+            if (self.currentConsole.length) {
+                [self.currentConsole deleteCharactersInRange:NSMakeRange(self.currentConsole.length - 1, 1)];
+            }
         }
             break;
         case CHClickableElementTypeAddSign:
@@ -131,6 +154,7 @@
 //    self.currentConsole = [NSMutableString stringWithString:@"HNO₃→O₂+H₂+N₂"];
 //    self.currentConsole = [NSMutableString stringWithString:@"O₃→O₂"];
 //    self.currentConsole = [NSMutableString stringWithString:@"FeO+HNO₃→Fe(NO₃)₃+NO+H₂O"];
+//    self.currentConsole = [NSMutableString stringWithString:@"Na₂O₂+H₂O→NaOH+O₂"];
     NSMutableArray *XArr = [NSMutableArray array];
     NSTextCheckingResult *match = [CHEquationObj matchText:self.currentConsole regular:@"^([^→]+)→([^→]+)$"];
     [CHEquationObj logMatch:match text:self.currentConsole];
@@ -231,6 +255,10 @@
     for (NSInteger i = 0; i < self.leftObjs.count; i ++ ) {
         CHEquationObj *obj = self.leftObjs[i];
         NSNumber *current = arr[i];
+        if (current.integerValue < 0) {
+            [CHToast showCenterToast:@"方程式错误，无法配平"];
+            return;
+        }
         [string appendString:[NSString stringWithFormat:@"%@%@",current.integerValue == 1 ? @"":@(current.integerValue),obj.currentTitle]];
         if (i < self.leftObjs.count - 1 ) {
             [string appendString:@"+"];
@@ -256,7 +284,11 @@
     while (noPass) {
         BOOL wrong = NO;
         for (NSNumber *num in result) {
-            if (num.floatValue != ceil(num.floatValue)) {
+            CGFloat result = num.floatValue - ceil(num.floatValue);
+            CGFloat result1 = num.floatValue - floor(num.floatValue);
+            if ((result < 0.01 && result > -0.01) || (result1 < 0.01 && result1 > -0.01)) {
+                
+            }else {
                 wrong = YES;
             }
         }
@@ -271,8 +303,9 @@
     }
     NSInteger i = [result[0] integerValue];
     for (NSNumber *num in result) {
-        if (num.integerValue < i) {
-            i = num.integerValue;
+        NSInteger tmp = num.integerValue < 0? -num.integerValue:num.integerValue;
+        if (tmp < i) {
+            i = tmp;
         }
     }
     NSInteger divisor = 2;

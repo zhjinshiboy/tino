@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger , CHEquationState) {
 };
 
 @interface CHEquationManager : NSObject
+@property (nonatomic , strong) NSArray *chemistryArr;
+@property (nonatomic , strong) NSString *chemistryString;
 //@property (nonatomic , assign) CHEquationState state;
 @property (nonatomic , strong) NSMutableString *currentConsole;
 @property (nonatomic , assign) NSInteger bracketCount;
