@@ -227,7 +227,8 @@
     NSMutableString *string = [NSMutableString string];
     for (NSInteger i = 0; i < self.leftObjs.count; i ++ ) {
         CHEquationObj *obj = self.leftObjs[i];
-        [string appendString:[NSString stringWithFormat:@"%@%@",[arr[i] integerValue] == 1 ? @"":arr[i],obj.currentTitle]];
+        NSNumber *current = arr[i];
+        [string appendString:[NSString stringWithFormat:@"%@%@",current.integerValue == 1 ? @"":@(current.integerValue),obj.currentTitle]];
         if (i < self.leftObjs.count - 1 ) {
             [string appendString:@"+"];
         }else {
@@ -237,7 +238,7 @@
     for (NSInteger i = 0; i < self.rightObjs.count; i ++ ) {
         CHEquationObj *obj = self.rightObjs[i];
         NSNumber *current = arr[i + self.leftObjs.count];
-        current = self.rightObjs.count - 1 == i?current:@(-current.integerValue);
+        current = self.rightObjs.count - 1 == i?@(current.integerValue):@(-current.integerValue);
         [string appendString:[NSString stringWithFormat:@"%@%@",current.integerValue == 1? @"":current,obj.currentTitle]];
         if (i < self.rightObjs.count - 1 ) {
             [string appendString:@"+"];
