@@ -32,6 +32,15 @@
 		218C5E9320BE7CC000486265 /* CHEquationObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E7D20BE7CC000486265 /* CHEquationObj.m */; };
 		218C5E9420BE7CC000486265 /* CHClickableElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E8020BE7CC000486265 /* CHClickableElement.m */; };
 		218C5E9820BE861F00486265 /* CHEquationBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C5E9720BE861F00486265 /* CHEquationBalance.m */; };
+		21BDBECE2101F4C000CFCC57 /* CHHelpContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BDBECD2101F4C000CFCC57 /* CHHelpContainerViewController.m */; };
+		21BDBED22101F60700CFCC57 /* CHContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BDBED12101F60700CFCC57 /* CHContainerTopBar.m */; };
+		21BDBED52101F74800CFCC57 /* CHViewContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BDBED42101F74700CFCC57 /* CHViewContainerView.m */; };
+		21BDBED82101F79500CFCC57 /* CHControllerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BDBED72101F79500CFCC57 /* CHControllerContainerView.m */; };
+		21BDBEDB2101F7FB00CFCC57 /* CHHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BDBEDA2101F7FB00CFCC57 /* CHHelpViewController.m */; };
+		21BDBEF721023FD000CFCC57 /* help1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21BDBEF621023FD000CFCC57 /* help1.pdf */; };
+		21BDBEF92102411200CFCC57 /* help3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21BDBEF82102411200CFCC57 /* help3.pdf */; };
+		21BDBEFB2102413000CFCC57 /* help2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21BDBEFA2102413000CFCC57 /* help2.pdf */; };
+		21EEF61220FDFCBE00B92300 /* GaussSeidelTool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21EEF61020FDFCBE00B92300 /* GaussSeidelTool.cpp */; };
 		97F8E8062C0B82BFE695F8E2 /* libPods-balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +94,21 @@
 		218C5E8120BE7CC000486265 /* CHClickableElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHClickableElement.h; sourceTree = "<group>"; };
 		218C5E9620BE861F00486265 /* CHEquationBalance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHEquationBalance.h; sourceTree = "<group>"; };
 		218C5E9720BE861F00486265 /* CHEquationBalance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHEquationBalance.m; sourceTree = "<group>"; };
+		21BDBECC2101F4C000CFCC57 /* CHHelpContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHHelpContainerViewController.h; sourceTree = "<group>"; };
+		21BDBECD2101F4C000CFCC57 /* CHHelpContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHHelpContainerViewController.m; sourceTree = "<group>"; };
+		21BDBED02101F60700CFCC57 /* CHContainerTopBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHContainerTopBar.h; sourceTree = "<group>"; };
+		21BDBED12101F60700CFCC57 /* CHContainerTopBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHContainerTopBar.m; sourceTree = "<group>"; };
+		21BDBED32101F74700CFCC57 /* CHViewContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHViewContainerView.h; sourceTree = "<group>"; };
+		21BDBED42101F74700CFCC57 /* CHViewContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHViewContainerView.m; sourceTree = "<group>"; };
+		21BDBED62101F79500CFCC57 /* CHControllerContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHControllerContainerView.h; sourceTree = "<group>"; };
+		21BDBED72101F79500CFCC57 /* CHControllerContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHControllerContainerView.m; sourceTree = "<group>"; };
+		21BDBED92101F7FB00CFCC57 /* CHHelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHHelpViewController.h; sourceTree = "<group>"; };
+		21BDBEDA2101F7FB00CFCC57 /* CHHelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHHelpViewController.m; sourceTree = "<group>"; };
+		21BDBEF621023FD000CFCC57 /* help1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = help1.pdf; sourceTree = "<group>"; };
+		21BDBEF82102411200CFCC57 /* help3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = help3.pdf; sourceTree = "<group>"; };
+		21BDBEFA2102413000CFCC57 /* help2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = help2.pdf; sourceTree = "<group>"; };
+		21EEF61020FDFCBE00B92300 /* GaussSeidelTool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GaussSeidelTool.cpp; sourceTree = "<group>"; };
+		21EEF61120FDFCBE00B92300 /* GaussSeidelTool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GaussSeidelTool.hpp; sourceTree = "<group>"; };
 		802C5E3FF81DB0651A59162F /* Pods-balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.release.xcconfig"; sourceTree = "<group>"; };
 		A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-balance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEC3954E15E9918D03C459A /* Pods-balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +173,7 @@
 		218849B420B17B450021BA95 /* balance */ = {
 			isa = PBXGroup;
 			children = (
+				21BDBEF521023FC500CFCC57 /* Data */,
 				218C5E4D20BE7CC000486265 /* Classes */,
 				218849B520B17B450021BA95 /* AppDelegate.h */,
 				218849B620B17B450021BA95 /* AppDelegate.m */,
@@ -177,6 +202,7 @@
 		218C5E4E20BE7CC000486265 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				21BDBECA2101F46800CFCC57 /* Help */,
 				2120B61120DF383E0079CC8D /* ChemistryTable */,
 				218C5E7720BE7CC000486265 /* Singleton */,
 				218C5E7B20BE7CC000486265 /* Model */,
@@ -253,6 +279,7 @@
 		218C5E6720BE7CC000486265 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				21BDBECF2101F5F100CFCC57 /* Container */,
 				218C5E9520BE860F00486265 /* Equation */,
 				218C5E6820BE7CC000486265 /* Toast */,
 			);
@@ -348,8 +375,52 @@
 			children = (
 				218C5E9620BE861F00486265 /* CHEquationBalance.h */,
 				218C5E9720BE861F00486265 /* CHEquationBalance.m */,
+				21EEF61020FDFCBE00B92300 /* GaussSeidelTool.cpp */,
+				21EEF61120FDFCBE00B92300 /* GaussSeidelTool.hpp */,
 			);
 			path = Equation;
+			sourceTree = "<group>";
+		};
+		21BDBECA2101F46800CFCC57 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				21BDBECB2101F46800CFCC57 /* View */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		21BDBECB2101F46800CFCC57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21BDBECC2101F4C000CFCC57 /* CHHelpContainerViewController.h */,
+				21BDBECD2101F4C000CFCC57 /* CHHelpContainerViewController.m */,
+				21BDBED92101F7FB00CFCC57 /* CHHelpViewController.h */,
+				21BDBEDA2101F7FB00CFCC57 /* CHHelpViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21BDBECF2101F5F100CFCC57 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				21BDBED02101F60700CFCC57 /* CHContainerTopBar.h */,
+				21BDBED12101F60700CFCC57 /* CHContainerTopBar.m */,
+				21BDBED32101F74700CFCC57 /* CHViewContainerView.h */,
+				21BDBED42101F74700CFCC57 /* CHViewContainerView.m */,
+				21BDBED62101F79500CFCC57 /* CHControllerContainerView.h */,
+				21BDBED72101F79500CFCC57 /* CHControllerContainerView.m */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		21BDBEF521023FC500CFCC57 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				21BDBEF621023FD000CFCC57 /* help1.pdf */,
+				21BDBEFA2102413000CFCC57 /* help2.pdf */,
+				21BDBEF82102411200CFCC57 /* help3.pdf */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		7AD76CE5513791CAF6736625 /* Frameworks */ = {
@@ -419,9 +490,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				218849C220B17B470021BA95 /* LaunchScreen.storyboard in Resources */,
+				21BDBEF92102411200CFCC57 /* help3.pdf in Resources */,
 				218849BF20B17B470021BA95 /* Assets.xcassets in Resources */,
 				21884A0420B1E4C00021BA95 /* CHLocalizable.strings in Resources */,
+				21BDBEF721023FD000CFCC57 /* help1.pdf in Resources */,
 				218849BD20B17B450021BA95 /* Main.storyboard in Resources */,
+				21BDBEFB2102413000CFCC57 /* help2.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +531,7 @@
 				218C5E8920BE7CC000486265 /* CHBaseView.m in Sources */,
 				218C5E9220BE7CC000486265 /* CHEquationManager.m in Sources */,
 				218C5E8F20BE7CC000486265 /* UIFont+CHFonts.m in Sources */,
+				21BDBED22101F60700CFCC57 /* CHContainerTopBar.m in Sources */,
 				2120B61620DF38850079CC8D /* CHChemistryTableVC.m in Sources */,
 				218C5E8A20BE7CC000486265 /* CHBaseCollectionViewCell.m in Sources */,
 				218C5E9420BE7CC000486265 /* CHClickableElement.m in Sources */,
@@ -465,12 +540,17 @@
 				218C5E8420BE7CC000486265 /* CHEquationInputViewModel.m in Sources */,
 				218C5E8C20BE7CC000486265 /* TopmostView.m in Sources */,
 				218C5E8E20BE7CC000486265 /* UIImage+CHColors.m in Sources */,
+				21BDBED82101F79500CFCC57 /* CHControllerContainerView.m in Sources */,
 				218C5E8B20BE7CC000486265 /* CHBaseViewController.m in Sources */,
+				21BDBECE2101F4C000CFCC57 /* CHHelpContainerViewController.m in Sources */,
 				218C5E8520BE7CC000486265 /* CHChemistryCollectionViewCell.m in Sources */,
 				218C5E9820BE861F00486265 /* CHEquationBalance.m in Sources */,
 				218C5E8720BE7CC000486265 /* CHEquationInputView.m in Sources */,
+				21BDBEDB2101F7FB00CFCC57 /* CHHelpViewController.m in Sources */,
 				218C5E8D20BE7CC000486265 /* CHToast.m in Sources */,
+				21EEF61220FDFCBE00B92300 /* GaussSeidelTool.cpp in Sources */,
 				218C5E8620BE7CC000486265 /* CHBalanceViewController.m in Sources */,
+				21BDBED52101F74800CFCC57 /* CHViewContainerView.m in Sources */,
 				218C5E9320BE7CC000486265 /* CHEquationObj.m in Sources */,
 				218C5E8820BE7CC000486265 /* CHBaseViewModel.m in Sources */,
 				218849B720B17B450021BA95 /* AppDelegate.m in Sources */,

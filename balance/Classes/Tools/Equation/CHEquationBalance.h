@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CHEquationBalance : NSObject
++ (instancetype)shared;
 + (NSArray *)balanceEqationWithInput:(NSArray *)inputArr;
+- (NSMutableArray *)caculateWithArr:(NSArray *)arr index:(NSInteger)index result:(NSMutableArray *)result max:(NSInteger)max;
 @end

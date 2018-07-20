@@ -11,5 +11,7 @@
 @interface CHToast : NSObject
 
 + (void)showCenterToast:(NSString *)message;
++ (void)showLoading;
++ (void)hideLoading;
 
 @end

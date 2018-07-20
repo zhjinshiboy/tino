@@ -22,7 +22,7 @@
 @property (nonatomic , weak) CHEquationObj *fatherObj;
 
 - (NSArray *)allChemistrys;
-- (NSInteger)price;
+- (NSInteger)allPrice;
 - (NSInteger)multipleOfChemistry:(NSString *)chemistry;
 //- (NSInteger)price;
 

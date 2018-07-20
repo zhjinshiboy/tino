@@ -14,8 +14,32 @@
 
 + (void)showCenterToast:(NSString *)message
 {
+    if ([NSThread isMainThread]) {
+        [[TopmostView viewForApplicationWindow] makeToast:message duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
+    }else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[TopmostView viewForApplicationWindow] makeToast:message duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
+        });
+    }
+//    NSAssert([NSThread isMainThread], @"toast has been called on main thread");
+}
+
++ (void)showLoading
+{
     NSAssert([NSThread isMainThread], @"toast has been called on main thread");
-    [[TopmostView viewForApplicationWindow] makeToast:message duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
+    TopmostView *topmostView = [TopmostView viewForApplicationWindow];
+    topmostView.userInteractionEnabled = YES;
+    topmostView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    [topmostView makeToastActivity:CSToastPositionCenter];
+}
+
++ (void)hideLoading
+{
+    NSAssert([NSThread isMainThread], @"toast has been called on main thread");
+    TopmostView *topmostView = [TopmostView viewForApplicationWindow];
+    [topmostView hideToastActivity];
+    topmostView.backgroundColor = [UIColor clearColor];
+    topmostView.userInteractionEnabled = NO;
 }
 
 @end

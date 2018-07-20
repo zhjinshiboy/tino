@@ -15,6 +15,7 @@
 @property (nonatomic , strong) UICollectionView *chemistryCollection;
 @property (nonatomic , strong) UICollectionView *operatorCollection;
 @property (nonatomic , strong) UILabel *operatorTitle;
+@property (nonatomic , strong) UIButton *helpButton;
 @end
 
 @implementation CHEquationInputView
@@ -44,7 +45,21 @@
     [self.operatorTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.operatorCollection.mas_top);
         make.left.equalTo(self.chemistryCollection.mas_right);
-        make.top.right.equalTo(self);
+        make.top.equalTo(self);
+    }];
+    [self addSubview:self.helpButton];
+    CGFloat width = (CHOperatorBoardWidth - 1.2) / 4.0f - CHLineWidth;
+    [self.helpButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(width));
+        make.left.equalTo(self.operatorTitle.mas_right).offset(2);
+        make.top.equalTo(self.operatorTitle.mas_top);
+        make.right.equalTo(self).offset(-2);
+        make.bottom.equalTo(self.operatorTitle.mas_bottom);
+    }];
+    [[self.helpButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        CHClickableElement *element = [CHClickableElement new];
+        [element setType:CHClickableElementTypeLearning];
+        [[CHEquationManager defaultManager] clickElement:element];
     }];
 }
 
@@ -93,6 +108,17 @@
         [_operatorTitle setTextAlignment:NSTextAlignmentCenter];
     }
     return _operatorTitle;
+}
+
+- (UIButton *)helpButton {
+    if (!_helpButton) {
+        _helpButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_helpButton setBackgroundColor:[UIColor colorWithNumber:2]];
+        [_helpButton setTitleColor:[UIColor colorWithNumber:0] forState:UIControlStateNormal];
+        [_helpButton.titleLabel setFont:[UIFont fontWithNumber:2]];
+        [_helpButton setTitle:CHString(@"Learn") forState:UIControlStateNormal];
+    }
+    return _helpButton;
 }
 
 #pragma mark - collectionView delegate

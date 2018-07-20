@@ -26,7 +26,7 @@
             return [UIFont systemFontOfSize:40];
             break;
         case 2:
-            return [UIFont systemFontOfSize:20];
+            return [UIFont systemFontOfSize:18];
             break;
         default:
             break;

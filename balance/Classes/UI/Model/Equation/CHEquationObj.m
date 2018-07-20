@@ -172,20 +172,18 @@
 
 - (id)copyWithZone:(nullable NSZone *)zone {
     CHEquationObj *model = [[[self class] allocWithZone:zone] init];
-//    model.chemistryDic = self.chemistryDic;
-//    model.price  = self.price;
     return model;
 }
 
-- (NSInteger)price {
-    return 0;
+- (NSInteger)allPrice {
+    NSInteger price = 0;
+    for (CHEquationObj *obj in self.subObjs) {
+        price += obj.price;
+    }
+    return self.price * self.count + price;
 }
 
 - (NSArray *)allChemistrys {
-//    return self.chemistryDic.allKeys;
-//    for (<#type *object#> in <#collection#>) {
-//        <#statements#>
-//    }
     NSMutableArray *arr = [NSMutableArray array];
     if (self.title) {
         [arr addObject:self.title];

@@ -10,4 +10,5 @@
 
 @interface UIImage (CHColors)
 + (UIImage *)imageWithColor:(UIColor *)color;
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor;
 @end

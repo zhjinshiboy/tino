@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger , CHClickableElementType) {
     CHClickableElementTypeReduceSign,
     CHClickableElementTypeBalanceSign,
     CHClickableElementTypeLeftBracket,
-    CHClickableElementTypeRightBracket
+    CHClickableElementTypeRightBracket,
+    CHClickableElementTypeLearning,
 };
 
 @interface CHClickableElement : NSObject
