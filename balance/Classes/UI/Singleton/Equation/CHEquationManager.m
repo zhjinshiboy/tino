@@ -117,7 +117,7 @@
         {
             [self.leftObjs removeAllObjects];
             [self.rightObjs removeAllObjects];
-            [self testDemo];
+//            [self testDemo];
             [CHToast showLoading];
             dispatch_async(dispatch_queue_create("com.tino.balance", DISPATCH_QUEUE_SERIAL), ^{
                 [self calculateResult];
@@ -169,7 +169,7 @@
     //    self.currentConsole = [NSMutableString stringWithString:@"O₃→O₂"];
 //    self.currentConsole = [NSMutableString stringWithString:@"FeO+HNO₃→Fe(NO₃)₃+NO+H₂O"];  //again > 10
     //    self.currentConsole = [NSMutableString stringWithString:@"Na₂O₂+H₂O→NaOH+O₂"];
-        self.currentConsole = [NSMutableString stringWithString:@"Al+OH⁻+H₂O→Al(OH)₄⁻+H₂⁺"];
+//        self.currentConsole = [NSMutableString stringWithString:@"Al+OH⁻+H₂O→Al(OH)₄⁻+H₂⁺"];
     //    self.currentConsole = [NSMutableString stringWithString:@"Fe²⁺+Br⁻+Cl₂→Br₂+Cl⁻+Fe³⁺"];
     //    self.currentConsole = [NSMutableString stringWithString:@"CO₂+OH⁻→CO₃²⁻+H₂O"];
 //        self.currentConsole = [NSMutableString stringWithString:@"Ba²⁺+SO₄²⁻→BaSO₄"];
@@ -293,7 +293,10 @@
     }
     
 //    NSArray *arr = [CHEquationBalance balanceEqationWithInput:YArr];
-    NSArray *result = [[CHEquationBalance shared] caculateWithArr:YArr index:self.leftObjs.count result:nil max:100];
+    NSArray *result = [[CHEquationBalance shared] caculateWithArr:YArr index:self.leftObjs.count result:nil max:10];
+    if (!result) {
+        result = [[CHEquationBalance shared] caculateWithArr:YArr index:self.leftObjs.count result:nil max:100];
+    }
     NSMutableArray *arr = [NSMutableArray new];
     for (NSInteger i = 0; i<result.count; i ++) {
         if (i < self.leftObjs.count) {
