@@ -26,8 +26,8 @@
         make.edges.equalTo(self.view);
     }];
     self.pagesContainer.topBar.leftPadding = 50;
-    self.pagesContainer.topBar.topPadding = 0;
-    self.pagesContainer.topBarHeight = 40;
+    self.pagesContainer.topBar.topPadding = 20;
+    self.pagesContainer.topBarHeight = 60;
 //    self.pagesContainer.topBar.titleFont = [BFCFont fontWithSize:16];
 //    [self.pagesContainer.topBar addSubview:[self createBackBtn:26+([UIDevice bfc_isIPhoneX]?24:0)]];
 //    if ([UIDevice bfc_isIPhoneX]) {
@@ -80,6 +80,14 @@
         [_closeBtn setImage:[[UIImage imageNamed:@"icon_close"] imageWithTintColor:[UIColor redColor]] forState:UIControlStateNormal];
     }
     return _closeBtn;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
 }
 
 @end

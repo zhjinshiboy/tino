@@ -47,7 +47,19 @@
                 make.top.equalTo(self.img.mas_top).offset((19 + line * 35 + (line - 1) * 3) * height / 375.0f);
             }];
         }else {
-            
+            if (number >= 58 && number <= 71) {
+                line = 0;
+                row = number - 58;
+            }else {
+                line = 1;
+                row = number - 90;
+            }
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(self.img.mas_width).multipliedBy(31 / 667.0f);
+                make.height.equalTo(self.img.mas_height).multipliedBy(35 / 375.0f);
+                make.left.equalTo(self.img.mas_left).offset((10 + (row + 3) * 31 + ((row + 3) - 1) * 6) * width / 667.0f);
+                make.top.equalTo(self.img.mas_top).offset((298 + line * 35 + (line - 1) * 3) * height / 375.0f);
+            }];
         }
     }
     
