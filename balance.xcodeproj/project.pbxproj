@@ -40,7 +40,6 @@
 		21BDBEF721023FD000CFCC57 /* help1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21BDBEF621023FD000CFCC57 /* help1.pdf */; };
 		21BDBEF92102411200CFCC57 /* help3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21BDBEF82102411200CFCC57 /* help3.pdf */; };
 		21BDBEFB2102413000CFCC57 /* help2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21BDBEFA2102413000CFCC57 /* help2.pdf */; };
-		21EEF61220FDFCBE00B92300 /* GaussSeidelTool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21EEF61020FDFCBE00B92300 /* GaussSeidelTool.cpp */; };
 		97F8E8062C0B82BFE695F8E2 /* libPods-balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */; };
 /* End PBXBuildFile section */
 
@@ -107,8 +106,6 @@
 		21BDBEF621023FD000CFCC57 /* help1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = help1.pdf; sourceTree = "<group>"; };
 		21BDBEF82102411200CFCC57 /* help3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = help3.pdf; sourceTree = "<group>"; };
 		21BDBEFA2102413000CFCC57 /* help2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = help2.pdf; sourceTree = "<group>"; };
-		21EEF61020FDFCBE00B92300 /* GaussSeidelTool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GaussSeidelTool.cpp; sourceTree = "<group>"; };
-		21EEF61120FDFCBE00B92300 /* GaussSeidelTool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GaussSeidelTool.hpp; sourceTree = "<group>"; };
 		802C5E3FF81DB0651A59162F /* Pods-balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.release.xcconfig"; sourceTree = "<group>"; };
 		A6A82DF8A0B9B34546D28F89 /* libPods-balance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-balance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEC3954E15E9918D03C459A /* Pods-balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-balance/Pods-balance.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,8 +372,6 @@
 			children = (
 				218C5E9620BE861F00486265 /* CHEquationBalance.h */,
 				218C5E9720BE861F00486265 /* CHEquationBalance.m */,
-				21EEF61020FDFCBE00B92300 /* GaussSeidelTool.cpp */,
-				21EEF61120FDFCBE00B92300 /* GaussSeidelTool.hpp */,
 			);
 			path = Equation;
 			sourceTree = "<group>";
@@ -548,7 +543,6 @@
 				218C5E8720BE7CC000486265 /* CHEquationInputView.m in Sources */,
 				21BDBEDB2101F7FB00CFCC57 /* CHHelpViewController.m in Sources */,
 				218C5E8D20BE7CC000486265 /* CHToast.m in Sources */,
-				21EEF61220FDFCBE00B92300 /* GaussSeidelTool.cpp in Sources */,
 				218C5E8620BE7CC000486265 /* CHBalanceViewController.m in Sources */,
 				21BDBED52101F74800CFCC57 /* CHViewContainerView.m in Sources */,
 				218C5E9320BE7CC000486265 /* CHEquationObj.m in Sources */,
@@ -705,7 +699,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gby.balance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -725,7 +719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gby.balance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
