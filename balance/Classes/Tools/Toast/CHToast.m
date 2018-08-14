@@ -15,10 +15,10 @@
 + (void)showCenterToast:(NSString *)message
 {
     if ([NSThread isMainThread]) {
-        [[TopmostView viewForApplicationWindow] makeToast:message duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
+        [[TopmostView viewForApplicationWindow] makeToast:@"Oh，the input is incorrect~" duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
     }else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[TopmostView viewForApplicationWindow] makeToast:message duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
+            [[TopmostView viewForApplicationWindow] makeToast:@"Oh，the input is incorrect~" duration:[CSToastManager defaultDuration] position:CSToastPositionCenter];
         });
     }
 //    NSAssert([NSThread isMainThread], @"toast has been called on main thread");

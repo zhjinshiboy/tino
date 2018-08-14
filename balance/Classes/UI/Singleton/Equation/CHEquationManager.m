@@ -211,7 +211,7 @@
         }
     }
     if (leftArr.count != rightArr.count) {
-        [CHToast showCenterToast:@"方程两侧不匹配"];
+        [CHToast showCenterToast:@"Oh，the input is incorrect~"];
         return;
     }else {
         BOOL equal = YES;
@@ -221,7 +221,7 @@
             }
         }
         if (!equal) {
-            [CHToast showCenterToast:@"方程两侧不匹配"];
+            [CHToast showCenterToast:@"Oh，the input is incorrect~"];
             return;
         }
     }

@@ -71,7 +71,7 @@
         text = [text substringWithRange:NSMakeRange(0, cornerRange.location)];
     }
     
-    NSTextCheckingResult *matchBlock = [CHEquationObj matchText:text regular:@"^[(](.+)[)]([₁₂₃₄₅₆₇₈₉₀])*$"];
+    NSTextCheckingResult *matchBlock = [CHEquationObj matchText:text regular:@"^[(](.+)[)]([₁₂₃₄₅₆₇₈₉₀]*)$"];
     if (matchBlock) {
         if ([matchBlock numberOfRanges] != 3) {
             [CHToast showCenterToast:CHFormatError(text)];
@@ -95,7 +95,7 @@
         return;
     }
     
-    NSTextCheckingResult *matchBlock1 = [CHEquationObj matchText:text regular:@"[(](.+)[)]([₁₂₃₄₅₆₇₈₉₀])*"];
+    NSTextCheckingResult *matchBlock1 = [CHEquationObj matchText:text regular:@"[(](.+)[)]([₁₂₃₄₅₆₇₈₉₀]*)"];
 //    [self logMatch:matchBlock1 text:text];
     if (matchBlock1) {
         if ([matchBlock1 numberOfRanges] != 3) {
@@ -120,12 +120,17 @@
         text = [text substringWithRange:NSMakeRange(0, [matchBlock1 rangeAtIndex:0].location)];
     }
     while (text.length) {
-        NSString *regular = [NSString stringWithFormat:@"(%@)([₁₂₃₄₅₆₇₈₉₀])*",[CHEquationManager defaultManager].chemistryString];
+        NSString *regular = [NSString stringWithFormat:@"(%@)([₁₂₃₄₅₆₇₈₉₀]*)",[CHEquationManager defaultManager].chemistryString];
 //        NSTextCheckingResult *matchChemistry = [CHEquationObj matchText:text regular:@"(H|N|O|Fe|F)([₁₂₃₄₅₆₇₈₉₀])*"];
         NSTextCheckingResult *matchChemistry = [CHEquationObj matchText:text regular:regular];
         [CHEquationObj logMatch:matchChemistry text:text];
         if (matchChemistry) {
             if ([matchChemistry numberOfRanges] != 3) {
+                [CHToast showCenterToast:CHFormatError(text)];
+                return;
+            }
+            NSRange range = [matchChemistry rangeAtIndex:0];
+            if (range.length <= 0) {
                 [CHToast showCenterToast:CHFormatError(text)];
                 return;
             }
